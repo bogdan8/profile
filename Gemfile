@@ -17,6 +17,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'turbolinks', '~> 5'
 gem 'simple_form'
 gem 'tinymce-rails'
+gem 'devise'
+gem 'devise-bootstrap-views', :git => 'https://github.com/hisea/devise-bootstrap-views.git', :branch => 'bootstrap4'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
