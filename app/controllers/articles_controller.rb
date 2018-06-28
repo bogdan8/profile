@@ -3,9 +3,12 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    @categories = Category.all
   end
 
-  def show; end
+  def show
+    @categories = Category.all
+  end
 
   private
   
