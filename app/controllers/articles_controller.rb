@@ -6,7 +6,9 @@ class ArticlesController < ApplicationController
     @categories = Category.all
   end
 
-  def show; end
+  def show
+    @categories = Category.all
+  end
 
   private
   

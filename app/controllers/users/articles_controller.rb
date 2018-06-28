@@ -11,13 +11,16 @@ module Users
 
     def new
       @article = Article.new
+      @categories = Category.all
     end
 
-    def edit; end
+    def edit
+      @categories = Category.all
+    end
 
     def create
       @article = Article.new(article_params)
-
+      add_categories_to_article
       if @article.save
         redirect_to [:users, @article], notice: 'Article was successfully created.'
       else
@@ -26,6 +29,8 @@ module Users
     end
 
     def update
+      Categorization.where(article_id: @article.id).delete_all
+      add_categories_to_article
       if @article.update(article_params)
         redirect_to [:users, @article], notice: 'Article was successfully updated.'
       else
@@ -46,6 +51,13 @@ module Users
 
     def article_params
       params.require(:article).permit(:title, :slug, :short_description, :long_description, :author, :link, :link_text)
+    end
+
+    def add_categories_to_article
+      return if params[:article][:category_ids].nil?
+      params[:article][:category_ids].each do |category|
+        @article.categorizations.build(category_id: category) unless category.empty?
+      end
     end
   end
 end

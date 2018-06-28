@@ -1,8 +1,9 @@
 toolbar:
   - styleselect | bold italic | undo redo | searchreplace | preview
-  - image | link | charmap | forecolor | backcolor | numlist bullist | emoticons | nonbreaking | table
+  - image | media | link | charmap | forecolor | backcolor | numlist bullist | emoticons | nonbreaking | table
 plugins:
   - image
+  - media
   - link
   - preview
   - charmap
