@@ -3,13 +3,14 @@
   <div class="row">
     <div class="col-md-8">
       <h1 class="my-4">Interesting articles</h1>
+      <h1 class="my-4"><%= link_to 'New article', new_users_article_path %></h1>
 
       <% @articles.each do |article| %>
         <div class="card mb-4">
           <div class="card-body">
             <h2 class="card-title"><%= article.title %></h2>
             <p class="card-text"><%== article.short_description %></p>
-            <%= link_to 'Show', article, class: 'btn btn-primary' %>
+            <%= link_to 'Show', [:users, article], class: 'btn btn-primary' %>
             <%= link_to 'Edit', users_article_path(article), class: 'btn btn-warning' %>
             <%= link_to 'Delete', users_article_path(article), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %> 
           </div>
@@ -27,7 +28,7 @@
         </li>
       </ul>
     </div>
-		<%= render 'articles/sidebar' %>
+		<%= render 'users/articles/sidebar' %>
   </div>
 
 </div>

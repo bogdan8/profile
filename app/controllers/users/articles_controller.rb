@@ -29,7 +29,7 @@ module Users
 
   def update
     if @article.update(article_params)
-      redirect_to @article, notice: 'Article was successfully updated.'
+      redirect_to [:users, @article], notice: 'Article was successfully updated.'
     else
       render :edit
     end
@@ -37,7 +37,7 @@ module Users
 
   def destroy
     @article.destroy
-    redirect_to articles_url, notice: 'Article was successfully destroyed.'
+    redirect_to users_articles_url, notice: 'Article was successfully destroyed.'
   end
 
   private
