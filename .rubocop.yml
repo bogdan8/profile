@@ -14,7 +14,6 @@ AllCops:
     - 'config/**/**'
     - 'db/**/**'
     - 'bin/**'
-    - 'app/models/role.rb'
 Rails:
   Enabled: true
 

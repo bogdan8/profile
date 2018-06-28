@@ -9,7 +9,7 @@
 #  long_description  :text
 #  author            :string
 #  link              :string
-#  link_text         :string
+#  posted_on         :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #
