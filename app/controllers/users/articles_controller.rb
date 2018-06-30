@@ -5,9 +5,12 @@ module Users
 
     def index
       @articles = Article.all
+      @categories = Category.all
     end
 
-    def show; end
+    def show
+      @categories = Category.all
+    end
 
     def new
       @article = Article.new
@@ -46,11 +49,11 @@ module Users
     private
     
     def set_article
-      @article = Article.find(params[:id])
+      @article = Article.find(params[:id]).decorate
     end
 
     def article_params
-      params.require(:article).permit(:title, :slug, :short_description, :long_description, :author, :link, :link_text)
+      params.require(:article).permit(:title, :slug, :short_description, :long_description, :author, :link, :posted_at)
     end
 
     def add_categories_to_article

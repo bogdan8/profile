@@ -1,5 +1,17 @@
 <!-- Sidebar Widgets Column -->
 <div class="col-md-4">
+   <!-- Buttons -->
+  <div class="card my-4">
+    <h5 class="card-header">Buttons</h5>
+    <div class="card-body">
+      <div class="input-group">
+        <%= link_to 'New article', new_users_article_path, class: 'btn btn-success' %>
+        <%= link_to 'Edit', edit_users_article_path(article), class: 'btn btn-warning' %>
+        <%= link_to 'Delete', users_article_path(article), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %> 
+      </div>
+    </div>
+  </div>
+
   <!-- Search Widget -->
   <div class="card my-4">
     <h5 class="card-header">Search</h5>
@@ -20,7 +32,7 @@
         <div class="col-lg-12">
           <% @categories.each do |category| %>
             <button type="button" class="btn btn-primary">
-              <%= link_to category.title, category_path(category) %> <span class="badge badge-light"><%= category.articles.count %></span>
+              <%= link_to category.title, users_category_path(category) %> <span class="badge badge-light"><%= category.articles.count %></span>
             </button>
           <% end %>
         </div>

@@ -10,13 +10,13 @@
 				by <%= @article.author %>
 			</p>
 			<hr>
-			<p>Posted on <%= @article.posted_on %>, <%= link_to 'original article', @article.link, target: :_blank %></p>
+			<p><%= @article.posted_date %>, <%= link_to 'original article', @article.link, target: :_blank %></p>
 			<hr>
 			<!-- Post Content -->
 				<%== @article.long_description %>
 			<hr>
 		</div>
-    <%= render 'users/articles/sidebar' %>
+    <%= render 'users/articles/sidebar_article', article: @article %>
 	</div>
 	<!-- /.row -->
 </div>

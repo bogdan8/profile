@@ -1,5 +1,15 @@
 <!-- Sidebar Widgets Column -->
 <div class="col-md-4">
+   <!-- Buttons -->
+  <div class="card my-4">
+    <h5 class="card-header">Buttons</h5>
+    <div class="card-body">
+      <div class="input-group">
+        <%= link_to 'New article', new_users_article_path, class: 'btn btn-success' %>
+      </div>
+    </div>
+  </div>
+
   <!-- Search Widget -->
   <div class="card my-4">
     <h5 class="card-header">Search</h5>
@@ -17,31 +27,12 @@
     <h5 class="card-header">Categories</h5>
     <div class="card-body">
       <div class="row">
-        <div class="col-lg-6">
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="#">Web Design</a>
-            </li>
-            <li>
-              <a href="#">HTML</a>
-            </li>
-            <li>
-              <a href="#">Freebies</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-lg-6">
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="#">JavaScript</a>
-            </li>
-            <li>
-              <a href="#">CSS</a>
-            </li>
-            <li>
-              <a href="#">Tutorials</a>
-            </li>
-          </ul>
+        <div class="col-lg-12">
+          <% @categories.each do |category| %>
+            <button type="button" class="btn btn-primary">
+              <%= link_to category.title, users_category_path(category) %> <span class="badge badge-light"><%= category.articles.count %></span>
+            </button>
+          <% end %>
         </div>
       </div>
     </div>
