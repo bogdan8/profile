@@ -1,6 +1,7 @@
 module Users
   class ArticlesController < ApplicationController
     before_action :set_article, only: %i[show edit update destroy]
+    before_action :set_categories, only: %i[index show new edit]
     before_action :authenticate_user!
 
     def index
@@ -11,12 +12,9 @@ module Users
 
     def new
       @article = Article.new
-      @categories = Category.all
     end
 
-    def edit
-      @categories = Category.all
-    end
+    def edit; end
 
     def create
       @article = Article.new(article_params)
@@ -46,11 +44,15 @@ module Users
     private
     
     def set_article
-      @article = Article.find(params[:id])
+      @article = Article.find(params[:id]).decorate
+    end
+
+    def set_categories
+      @categories = Category.all
     end
 
     def article_params
-      params.require(:article).permit(:title, :slug, :short_description, :long_description, :author, :link, :link_text)
+      params.require(:article).permit(:title, :slug, :short_description, :long_description, :author, :link, :posted_at)
     end
 
     def add_categories_to_article
