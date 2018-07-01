@@ -1,6 +1,10 @@
-<h1>Editing Category</h1>
-
-<%= render 'form', category: @category %>
-
-<%= link_to 'Show', [:users, @category] %> |
-<%= link_to 'Back', users_categories_path %>
+<div class="container categories">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="my-4">Edit category</h3>
+    </div>
+    <div class="col-md-12">
+      <%= render 'form', category: @category %>
+    </div>
+  </div>
+</div>
