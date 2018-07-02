@@ -20,6 +20,7 @@ gem 'tinymce-rails'
 gem 'devise'
 gem 'devise-bootstrap-views', git: 'https://github.com/hisea/devise-bootstrap-views.git', branch: 'bootstrap4'
 gem 'draper'
+gem 'slim'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
