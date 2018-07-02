@@ -1,0 +1,15 @@
+.container.categories
+  .row
+    .col-md-12
+      h1.my-4
+        | Interesting articles
+      = link_to 'New category', new_users_category_path, class: 'btn btn-success'
+    .col-md-12
+      .bd-example
+        ul.list-group
+          - @categories.each do |category|
+            li.list-group-item
+              = category.title
+              = link_to 'Show', users_category_path(category), class: 'btn btn-success'
+              = link_to 'Edit', edit_users_category_path(category), class: 'btn btn-warning'
+              = link_to 'Delete', users_category_path(category), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' }

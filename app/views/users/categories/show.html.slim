@@ -1,0 +1,16 @@
+.container.articles
+  .row
+    .col-md-12
+      h1.my-4
+        = @category.title
+      - @category.articles.decorate.each do |article|
+        .card.mb-4
+          .card-body
+            h2.card-title
+              = link_to article.title, [:users, article]
+            p.card-text
+              == article.short_description
+          .card-footer.text-muted
+            = article.posted_date
+            |  by 
+            = article.author

@@ -1,0 +1,25 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+  .container
+    a.navbar-brand[href="#"]
+      | Start Bootstrap
+    button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"]
+      span.navbar-toggler-icon
+    #navbarResponsive.collapse.navbar-collapse
+      ul.navbar-nav.ml-auto
+        li.nav-item.active
+          = link_to 'Articles', articles_path, class: 'nav-link'
+        li.nav-item.dropdown
+          a#navbarDropdown.nav-link.dropdown-toggle[href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
+            |  Admin 
+          .dropdown-menu[aria-labelledby="navbarDropdown"]
+            = link_to 'Articles', users_articles_path, class: 'dropdown-item'
+            = link_to 'Categories', users_categories_path, class: 'dropdown-item'
+        li.nav-item
+          a.nav-link[href="#"]
+            | About
+        li.nav-item
+          a.nav-link[href="#"]
+            | Services
+        li.nav-item
+          a.nav-link[href="#"]
+            | Contact
