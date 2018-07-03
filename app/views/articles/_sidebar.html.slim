@@ -5,7 +5,7 @@
     h5.card-header Search
     .card-body
       .input-group
-        input.form-control placeholder=("Search for...") type="text" /
+        input.form-control placeholder=("Search for...") type="text"
         span.input-group-btn
           button.btn.btn-secondary type="button"  Go!
   /! Categories Widget
@@ -15,7 +15,7 @@
       .row
         .col-lg-12
           - @categories.each do |category|
-            button.btn.btn-primary type="button" 
+            button.btn.btn-primary.btn-margin type="button"
               = link_to category.title, category_path(category)
               span.badge.badge-light= category.articles.count
   /! Side Widget

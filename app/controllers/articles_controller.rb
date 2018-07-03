@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_action :set_categories, only: %i[index show]
 
   def index
-    @articles = Article.all
+    @articles = Article.page(params[:page]).per(1)
   end
 
   def show; end

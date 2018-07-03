@@ -5,7 +5,7 @@ module Users
     before_action :authenticate_user!
 
     def index
-      @articles = Article.all
+      @articles = Article.page(params[:page]).per(1)
     end
 
     def show; end

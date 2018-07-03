@@ -14,11 +14,5 @@
             = article.posted_date
             |  by 
             = article.author
-      ul.pagination.justify-content-center.mb-4
-        li.page-item
-          a.page-link[href="#"]
-            | ← Older
-        li.page-item.disabled
-          a.page-link[href="#"]
-            | Newer →
+      = paginate @articles
     = render 'users/articles/sidebar'

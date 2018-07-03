@@ -1,16 +1,18 @@
+/! Page Content
 .container.articles
   .row
-    .col-md-12
+    .col-sm-12.col-md-12.col-lg-8.col-xl-8
       h1.my-4
         = @category.title
-      - @category.articles.decorate.each do |article|
+      - @category.articles.each do |article|
         .card.mb-4
           .card-body
             h2.card-title
-              = link_to article.title, [:users, article]
+              = link_to article.title, article
             p.card-text
               == article.short_description
+            = link_to 'Read more...', article, class: 'btn btn-primary'
           .card-footer.text-muted
-            = article.posted_date
-            |  by 
-            = article.author
+            = article.decorate.posted_date
+            ' by #{article.author}
+    = render 'users/categories/sidebar'

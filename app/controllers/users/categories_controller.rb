@@ -1,11 +1,10 @@
 module Users
   class CategoriesController < ApplicationController
     before_action :set_category, only: %i[show edit update destroy]
+    before_action :set_categories, only: %i[index show]
     before_action :authenticate_user!
 
-    def index
-      @categories = Category.all
-    end
+    def index; end
 
     def show; end
 
@@ -42,6 +41,10 @@ module Users
 
     def set_category
       @category = Category.find(params[:id])
+    end
+
+    def set_categories
+      @categories = Category.all
     end
 
     def category_params
