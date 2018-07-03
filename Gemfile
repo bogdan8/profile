@@ -5,16 +5,22 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'bootstrap', '~> 4.1.1'
-gem 'jquery-rails'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.5'
-gem 'sass-rails', '~> 5.0'
+
+# for js
 gem 'uglifier', '>= 1.3.0'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'turbolinks', '~> 5'
+
+# for style
+gem 'bootstrap', '~> 4.1.1'
+gem 'sass-rails', '~> 5.0'
+
 gem 'simple_form'
 gem 'tinymce-rails'
 gem 'devise'
