@@ -4,18 +4,16 @@
       | Buttons
     .card-body
       .input-group
-        = link_to 'New article', new_users_article_path, class: 'btn btn-success'
-        = link_to 'Edit', edit_users_article_path(article), class: 'btn btn-warning'
-        = link_to 'Delete', users_article_path(article), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' }
+        = link_to 'New article', new_users_article_path, class: 'btn btn-success btn-margin'
+        = link_to 'Edit', edit_users_article_path(article), class: 'btn btn-warning btn-margin'
+        = link_to 'Delete', users_article_path(article), class: 'btn btn-danger btn-margin', method: :delete, data: { confirm: 'Are you sure?' }
   .card.my-4
     h5.card-header
       | Search
     .card-body
-      .input-group
-        input.form-control[type="text" placeholder="Search for..."]
-        span.input-group-btn
-          button.btn.btn-secondary[type="button"]
-            | Go!
+      = form_tag('/users/search', local: true, method: :get, class: 'form-inline') do
+        .input-group
+          = text_field_tag(:q, nil, data: { behavior: 'autocomplete' }, class: 'form-control', placeholder: 'Search for...')
   .card.my-4
     h5.card-header
       | Categories

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   namespace :users do
+    get :search, controller: :main
     resources :articles
     resources :categories
   end
