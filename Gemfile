@@ -1,13 +1,22 @@
 source 'https://rubygems.org'
+ruby '2.4.3'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 3.7'
+# for rails
 gem 'rails', '~> 5.1.5'
+gem 'pg', '>= 0.18', '< 2.0'
+gem 'simple_form'
+gem 'tinymce-rails'
+gem 'draper'
+gem 'slim'
+gem 'kaminari'
+
+# for server
+gem 'puma', '~> 3.7'
 
 # for js
 gem 'uglifier', '>= 1.3.0'
@@ -21,24 +30,32 @@ gem 'turbolinks', '~> 5'
 gem 'bootstrap', '~> 4.1.1'
 gem 'sass-rails', '~> 5.0'
 
-gem 'simple_form'
-gem 'tinymce-rails'
+# for devise
 gem 'devise'
 gem 'devise-bootstrap-views', git: 'https://github.com/hisea/devise-bootstrap-views.git', branch: 'bootstrap4'
-gem 'draper'
-gem 'slim'
-gem 'kaminari'
 
 group :development, :test do
+  gem 'awesome_print'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'rubycritic'
   gem 'capybara', '~> 2.13'
+  gem 'chromedriver-helper'
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'parallel_tests'
+  gem 'progress_bar'
+  gem 'rack-mini-profiler'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'simplecov', require: false
   gem 'selenium-webdriver'
 end
 
 group :development do
   gem 'annotate'
   gem 'bullet'
-  gem 'rubycritic'
   gem 'brakeman'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
