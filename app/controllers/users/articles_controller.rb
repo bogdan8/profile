@@ -1,5 +1,5 @@
 module Users
-  class ArticlesController < ApplicationController
+  class ArticlesController < BaseController
     before_action :set_article, only: %i[show edit update destroy]
     before_action :set_categories, only: %i[index show new edit]
     before_action :authenticate_user!
