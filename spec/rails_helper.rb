@@ -15,9 +15,7 @@ Rails.application.routes.default_url_options[:host] = 'localhost:5000'
 require 'devise'
 require 'rspec/rails'
 require 'shoulda/matchers'
-require 'paperclip/matchers'
 require 'capybara/rspec'
-require 'cancan/matchers'
 
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].map { |f| require f }
 

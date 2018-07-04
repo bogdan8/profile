@@ -1,8 +1,3 @@
-def login_user(user)
-  user.add_role :user
-  sign_in user
-end
-
 def login_user_feature(user)
   visit new_user_session_path
   within '#new_user' do
