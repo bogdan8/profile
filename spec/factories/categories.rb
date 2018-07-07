@@ -9,9 +9,8 @@
 #  updated_at :datetime         not null
 #
 
-class Category < ApplicationRecord
-  has_many :categorizations, dependent: :destroy
-  has_many :articles, through: :categorizations
-
-  validates :title, presence: true
+FactoryBot.define do
+  factory :category do
+    title Faker::SiliconValley.invention
+  end
 end

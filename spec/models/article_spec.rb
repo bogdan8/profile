@@ -14,9 +14,16 @@
 #  updated_at        :datetime         not null
 #
 
-class Article < ApplicationRecord
-  has_many :categorizations, dependent: :destroy
-  has_many :categories, through: :categorizations
+require 'rails_helper'
 
-  validates :title, :short_description, :long_description, presence: true
+RSpec.describe Article, type: :model do
+  describe '#relations' do
+    it { is_expected.to have_many :categories }
+  end
+
+  describe '#validations' do
+    it { is_expected.to validate_presence_of :title }
+    it { is_expected.to validate_presence_of :short_description }
+    it { is_expected.to validate_presence_of :long_description }
+  end
 end

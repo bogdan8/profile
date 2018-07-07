@@ -14,9 +14,13 @@
 #  updated_at        :datetime         not null
 #
 
-class Article < ApplicationRecord
-  has_many :categorizations, dependent: :destroy
-  has_many :categories, through: :categorizations
-
-  validates :title, :short_description, :long_description, presence: true
+FactoryBot.define do
+  factory :article do
+    title Faker::SiliconValley.character
+    short_description Faker::SiliconValley.quote
+    long_description Faker::SiliconValley.quote
+    author Faker::SiliconValley.character
+    link Faker::SiliconValley.url
+    posted_at 'Today'
+  end
 end
