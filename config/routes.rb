@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   get :search, controller: :main
   resources :articles, only: %i[index show]
   resources :categories, only: %i[show]
-  root to: 'main#index'
+  get :about, controller: :main
+  get :contact, controller: :main
+  root to: 'main#about'
 end
