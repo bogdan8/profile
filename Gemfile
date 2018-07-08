@@ -14,6 +14,7 @@ gem 'tinymce-rails'
 gem 'draper'
 gem 'slim'
 gem 'kaminari'
+gem 'friendly_id'
 
 # for server
 gem 'puma', '~> 3.7'

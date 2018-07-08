@@ -10,7 +10,7 @@ RSpec.describe CategoriesController, type: :controller do
 
   describe 'GET #show' do
     it 'renders the template with status' do
-      get :show, params: { id: category.id }
+      get :show, params: { id: category.slug }
       expect(response).to render_template(:show)
       expect(response.status).to eq(200)
     end

@@ -44,7 +44,7 @@ module Users
     private
     
     def set_article
-      @article = Article.find(params[:id]).decorate
+      @article = Article.friendly.find(params[:id]).decorate
     end
 
     def set_categories
