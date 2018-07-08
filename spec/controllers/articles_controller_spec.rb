@@ -18,7 +18,7 @@ RSpec.describe ArticlesController, type: :controller do
 
   describe 'GET #show' do
     it 'renders the template with status' do
-      get :show, params: { id: article.id }
+      get :show, params: { id: article.slug }
       expect(response).to render_template(:show)
       expect(response.status).to eq(200)
     end
