@@ -30,6 +30,7 @@ gem 'turbolinks', '~> 5'
 # for style
 gem 'bootstrap', '~> 4.1.1'
 gem 'sass-rails', '~> 5.0'
+gem 'font-awesome-rails'
 
 # for devise
 gem 'devise'
