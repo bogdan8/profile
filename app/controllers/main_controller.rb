@@ -6,4 +6,8 @@ class MainController < ApplicationController
     @articles = Article.where('title LIKE ?', "%#{params[:q]}%").limit(5)
     respond_with @articles
   end
+
+  def about; end
+
+  def contact; end
 end

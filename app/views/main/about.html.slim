@@ -1,0 +1,81 @@
+= provide :about, 'active'
+
+.container.about
+  .row
+    .col-sm-12.col-md-12.col-lg-12.col-xl-12
+      h2.my-4 
+        | About Me:
+    .col-sm-12.like
+      .center
+        h4 Hi, I'm Bohdan Lytvyn
+        h4 I like to ride a bicycle every day #{fa_icon 'bicycle 1x', class: :green}
+        h4 I love:
+      .container
+        .row
+          .col-sm-2.col-md-2.col-lg-2.col-xl-1
+            = image_tag 'ruby.png', class: 'img-responsive'
+          .col-sm-2.col-md-2.col-lg-2.col-xl-1
+            = image_tag 'rails.png', class: 'img-responsive'
+          .col-sm-2.col-md-2.col-lg-2.col-xl-1
+            = image_tag 'vim.png', class: 'img-responsive'
+          .col-sm-2.col-md-2.col-lg-2.col-xl-1
+            = image_tag 'linux.png', class: 'img-responsive'
+          .col-sm-4.col-md-4.col-lg-4.col-xl-2
+            = image_tag 'github.png', class: 'img-responsive'
+          .col-sm-2.col-md-2.col-lg-2.col-xl-1
+            = image_tag 'tmux.png', class: 'img-responsive'
+          .col-sm-2.col-md-2.col-lg-2.col-xl-1
+            = image_tag 'postgresql.png', class: 'img-responsive'
+          .col-sm-4.col-md-4.col-lg-4.col-xl-2
+            = image_tag 'docker.png', class: 'img-responsive'
+    .col-sm-12.social
+      .center
+        h3 Where i am:
+        .flex-row
+          h4 = link_to fa_icon('facebook-square 2x'), 'https://www.facebook.com/BoboAndBobo', target: :_blank, class: 'btn-margin'
+          h4 = link_to fa_icon('linkedin-square 2x'), 'https://www.linkedin.com/in/bohdan-lytvyn-9724b5118/', target: :_blank, class: 'btn-margin'
+          h4 = link_to fa_icon('bitbucket 2x'), 'https://bitbucket.org/bogdan8/', target: :_blank, class: 'btn-margin'
+          h4 = link_to fa_icon('github 2x'), 'https://www.facebook.com/BoboAndBobo', target: :_blank, class: 'btn-margin black'
+    .col-sm-12
+      .center
+        h3 My experience:
+      .row
+        .col-sm-12
+          ul
+            li 
+              | Ruby On Rails:
+              ul
+                li
+                  | Jul 2016 - Jun 2017
+                  ul
+                    li
+                      | Insilico
+            li
+              | Java Script:
+              ul
+                li
+                  | Jul 2017 - Present
+                  ul
+                    li
+                      | OSF-Global
+    .col-sm-12
+      .center
+        h3 My education:
+      .row
+        .col-sm-12
+          ul
+            li 
+              | Galytska Academy:
+              ul
+                li
+                  | Software development 2011 - 2016
+              ul
+                li
+                  | Software Engineering 2016 - 2018
+
+    .col-sm-12.videos
+      .center
+        h3 My videos:
+      .row
+        .col-sm-12.col-md-12.col-lg-12.col-xl-12
+          iframe width="100%" height="564" src="https://player.vimeo.com/video/278895495" frameborder="0" allowFullScreen mozallowfullscreen webkitAllowFullScreen
