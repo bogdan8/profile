@@ -15,6 +15,7 @@ gem 'draper'
 gem 'slim'
 gem 'kaminari'
 gem 'friendly_id'
+gem 'paperclip'
 
 # for server
 gem 'puma', '~> 3.7'
