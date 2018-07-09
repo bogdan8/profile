@@ -70,6 +70,8 @@ group :development do
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma',   require: false
   gem 'capistrano-rails-console', require: false
+  gem 'capistrano-rails-db', require: false
+  gem 'capistrano-rails-logs-tail'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
