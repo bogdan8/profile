@@ -1,0 +1,9 @@
+.col-sm-12.col-md-12.col-lg-4.col-xl-4
+  .card.my-4
+    h5.card-header
+      | Buttons
+    .card-body
+      .input-group
+        = link_to 'New attachment', new_users_attachment_path, class: 'btn btn-success btn-margin'
+        = link_to 'Edit', edit_users_attachment_path(attachment), class: 'btn btn-warning btn-margin'
+        = link_to 'Delete', users_attachment_path(attachment), class: 'btn btn-danger btn-margin', method: :delete, data: { confirm: 'Are you sure?' }

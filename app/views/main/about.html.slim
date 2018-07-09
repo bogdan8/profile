@@ -12,6 +12,9 @@
         h4 I love:
       .container
         .row
+          - @images.each do |attachment|
+            .col-sm-2.col-md-2.col-lg-2.col-xl-1
+              = image_tag attachment.image, class: 'img-responsive'
     .col-sm-12.social
       .center
         h3 Where i am:

@@ -1,0 +1,13 @@
+.container.attachments
+  .row
+    .col-sm-12.col-md-12.col-lg-8.col-xl-8
+      h2.my-4
+        = link_to 'New attachment', new_users_attachment_path, class: 'btn btn-success'
+      .bd-example
+        ul.list-group
+          - @attachments.each do |attachment|
+            li.list-group-item
+              = get_attachment(attachment)
+              = link_to 'Show', users_attachment_path(attachment), class: 'btn btn-success btn-margin'
+              = link_to 'Edit', edit_users_attachment_path(attachment), class: 'btn btn-warning btn-margin'
+              = link_to 'Delete', users_attachment_path(attachment), class: 'btn btn-danger btn-margin', method: :delete, data: { confirm: 'Are you sure?' }

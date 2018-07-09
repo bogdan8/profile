@@ -7,7 +7,10 @@ class MainController < ApplicationController
     respond_with @articles
   end
 
-  def about; end
+  def about
+    @images = Attachment.get_images
+    @videos = Attachment.get_videos
+  end
 
   def contact; end
 end

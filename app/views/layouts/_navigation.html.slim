@@ -18,4 +18,5 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
             .dropdown-menu[aria-labelledby="navbarDropdown"]
               = link_to 'Articles', users_articles_path, class: 'dropdown-item'
               = link_to 'Categories', users_categories_path, class: 'dropdown-item'
+              = link_to 'Attachments', users_attachments_path, class: 'dropdown-item'
               = link_to "Log out", destroy_user_session_path, class: 'dropdown-item', method: :delete
