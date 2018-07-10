@@ -8,6 +8,10 @@
           - @attachments.each do |attachment|
             li.list-group-item
               = get_attachment(attachment)
+              p small: #{attachment.small}
+              p medium: #{attachment.medium}
+              p large: #{attachment.large}
+              p extra large: #{attachment.extra_large}
               = link_to 'Show', users_attachment_path(attachment), class: 'btn btn-success btn-margin'
               = link_to 'Edit', edit_users_attachment_path(attachment), class: 'btn btn-warning btn-margin'
               = link_to 'Delete', users_attachment_path(attachment), class: 'btn btn-danger btn-margin', method: :delete, data: { confirm: 'Are you sure?' }

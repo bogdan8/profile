@@ -13,6 +13,10 @@
 #  video_updated_at   :datetime
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
+#  small              :string           default("")
+#  medium             :string           default("")
+#  large              :string           default("")
+#  extra_large        :string           default("")
 #
 
 class Attachment < ApplicationRecord
