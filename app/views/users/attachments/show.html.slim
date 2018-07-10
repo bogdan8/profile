@@ -1,0 +1,12 @@
+/! Page Content
+.container.attachments
+  .row
+    .col-sm-12.col-md-12.col-lg-8.col-xl-8
+      h2.my-4
+        Attachment
+      = get_attachment(@attachment)
+      p small: #{@attachment.small}
+      p medium: #{@attachment.medium}
+      p large: #{@attachment.large}
+      p extra large: #{@attachment.extra_large}
+    = render 'users/attachments/sidebar', attachment: @attachment

@@ -10,6 +10,8 @@
 /log/
 /test/version_tmp/
 /tmp/
+/public/images/*
+/public/videos/*
 
 # Used by dotenv library to load environment variables.
 # .env

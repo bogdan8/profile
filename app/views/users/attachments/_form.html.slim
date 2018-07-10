@@ -1,0 +1,9 @@
+= simple_form_for [:users, @attachment], wrapper: :horizontal_form do |f|
+  = get_attachment(@attachment)
+  = f.input :image
+  = f.input :video
+  = f.input :small
+  = f.input :medium
+  = f.input :large
+  = f.input :extra_large
+  = f.submit :Add

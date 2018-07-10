@@ -93,6 +93,11 @@ GEM
     capistrano-rails-console (2.2.1)
       capistrano (>= 3.5.0, < 4.0.0)
       sshkit-interactive (~> 0.2.0)
+    capistrano-rails-db (0.0.2)
+      capistrano-rails (~> 1.1)
+    capistrano-rails-logs-tail (1.0.5)
+      capistrano (>= 3.4.0, < 4.0.0)
+      capistrano-rails
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
@@ -112,6 +117,9 @@ GEM
     chromedriver-helper (1.2.0)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
+    climate_control (0.2.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     codeclimate-engine-rb (0.4.1)
       virtus (~> 1.0)
     coercible (1.0.0)
@@ -212,6 +220,10 @@ GEM
     mail (2.7.0)
       mini_mime (>= 0.1.1)
     method_source (0.9.0)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
+    mimemagic (0.3.2)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
@@ -224,6 +236,12 @@ GEM
       mini_portile2 (~> 2.3.0)
     options (2.3.2)
     orm_adapter (0.5.0)
+    paperclip (5.2.1)
+      activemodel (>= 4.2.0)
+      activesupport (>= 4.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (~> 0.3.0)
     parallel (1.12.1)
     parallel_tests (2.21.3)
       parallel
@@ -406,6 +424,8 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails
   capistrano-rails-console
+  capistrano-rails-db
+  capistrano-rails-logs-tail
   capistrano-rvm
   capistrano3-puma
   capybara (~> 2.13)
@@ -425,6 +445,7 @@ DEPENDENCIES
   jquery-ui-rails
   kaminari
   listen (>= 3.0.5, < 3.2)
+  paperclip
   parallel_tests
   pg (>= 0.18, < 2.0)
   progress_bar
