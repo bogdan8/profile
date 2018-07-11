@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def login_user_feature(user)
   visit new_user_session_path
   within '#new_user' do

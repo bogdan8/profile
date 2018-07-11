@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Users
   class AttachmentsController < BaseController
     before_action :set_attachment, only: %i[show edit update destroy]
@@ -38,7 +40,7 @@ module Users
     end
 
     private
-    
+
     def set_attachment
       @attachment = Attachment.find(params[:id]).decorate
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: attachments
@@ -32,11 +34,11 @@ class Attachment < ApplicationRecord
 
   has_attached_file :video, url: '/videos/:class/:attachment/:id/:style/:filename'
 
-  def self.get_images
+  def self.images
     select(&:image?)
   end
 
-  def self.get_videos
+  def self.videos
     select(&:video?)
   end
 end

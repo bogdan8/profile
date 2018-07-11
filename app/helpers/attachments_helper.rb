@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AttachmentsHelper
   # method for get image or video
   def get_attachment(attachment)
