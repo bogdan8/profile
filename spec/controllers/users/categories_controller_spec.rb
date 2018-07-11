@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Users::CategoriesController, type: :controller do
@@ -41,7 +43,7 @@ RSpec.describe Users::CategoriesController, type: :controller do
         expect(response).to redirect_to(users_category_path(category.id))
       end
     end
-    
+
     context 'with incorrect parameters' do
       it 'should renders the edit template' do
         post :update, params: { id: category.slug, category: build(:category, title: '').attributes }

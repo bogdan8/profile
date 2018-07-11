@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: categories
@@ -12,7 +14,7 @@
 class Category < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
-  
+
   has_many :categorizations, dependent: :destroy
   has_many :articles, through: :categorizations
 

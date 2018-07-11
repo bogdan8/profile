@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Users
   class ArticlesController < BaseController
     before_action :set_article, only: %i[show edit update destroy]
@@ -42,7 +44,7 @@ module Users
     end
 
     private
-    
+
     def set_article
       @article = Article.friendly.find(params[:id]).decorate
     end

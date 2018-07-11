@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MainController < ApplicationController
   respond_to :json
   def index; end
@@ -8,8 +10,8 @@ class MainController < ApplicationController
   end
 
   def about
-    @images = Attachment.get_images
-    @videos = Attachment.get_videos
+    @images = Attachment.images
+    @videos = Attachment.videos
   end
 
   def contact; end
