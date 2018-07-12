@@ -19,7 +19,7 @@ RSpec.describe Users::CategoriesController, type: :controller do
   end
 
   describe 'GET #show' do
-    it 'renderes the template with status' do
+    it 'renders the template with status' do
       get :show, params: { id: category.slug }
       expect(response).to render_template(:show)
       expect(response.status).to eq(200)
@@ -27,10 +27,20 @@ RSpec.describe Users::CategoriesController, type: :controller do
   end
 
   describe 'GET #new' do
-    it 'render the template with status' do
+    it 'renders the template with status' do
       get :new
       expect(response).to render_template(:new)
       expect(response.status).to eq(200)
+    end
+  end
+
+  describe 'POST #create' do
+    context 'with correct parameters' do
+      it 'the number of categories should increse' do
+        categories = Category.count
+        post :create, params: { category: build(:category).attributes }
+        expect(Category.count).to eq(categories + 1)
+      end
     end
   end
 
