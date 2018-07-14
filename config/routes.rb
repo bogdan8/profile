@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get :about, controller: :main
   get :contact, controller: :main
   root to: 'main#about'
+  get '*path', to: 'main#about'
 end
