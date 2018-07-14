@@ -11,7 +11,7 @@
         .row
           - @images.each do |attachment|
             div class="col-sm-#{attachment.small} col-md-#{attachment.medium} col-lg-#{attachment.large} col-xl-#{attachment.extra_large}"
-              = image_tag attachment.image, class: 'image'
+              = image_tag attachment.image.url(:medium), class: 'image'
     .col-sm-12.social
       h4 Where i am:
       .flex-row
@@ -24,19 +24,25 @@
       .row
         .col-sm-12
           ul
-            li 
+            li.red
               | Ruby On Rails:
               ul
-                li
+                li.orange
                   | Jul 2016 - Jun 2017
                   ul
                     li
                       | Insilico
-            li
+                li.green
+                  | Jul 2018 - Present
+                  ul
+                    li
+                      | ManageBac
+
+            li.dark-yellow
               | Java Script:
-              ul
+              ul.orange
                 li
-                  | Jul 2017 - Present
+                  | Jul 2017 - Jul 2018
                   ul
                     li
                       | OSF-Global
