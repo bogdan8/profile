@@ -62,9 +62,10 @@
                 li
                   | Software Engineering 2016 - 2018
 
-    .col-sm-12.videos
-      h4 My videos:
-      .row
-        - @videos.each do |attachment|
-            div class="col-sm-#{attachment.small} col-md-#{attachment.medium} col-lg-#{attachment.large} col-xl-#{attachment.extra_large}"
-              = video_tag attachment.video, controls: true, class: :video
+    - @videos.any?
+      .col-sm-12.videos
+        h4 My videos:
+        .row
+          - @videos.each do |attachment|
+              div class="col-sm-#{attachment.small} col-md-#{attachment.medium} col-lg-#{attachment.large} col-xl-#{attachment.extra_large}"
+                = video_tag attachment.video, controls: true, class: :video

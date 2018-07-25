@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: attachments
@@ -17,6 +19,7 @@
 #  medium             :string           default("")
 #  large              :string           default("")
 #  extra_large        :string           default("")
+#  position           :integer          default(0)
 #
 
 FactoryBot.define do

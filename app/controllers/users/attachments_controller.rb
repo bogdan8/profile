@@ -46,7 +46,7 @@ module Users
     end
 
     def attachment_params
-      params.require(:attachment).permit(:image, :video, :small, :medium, :large, :extra_large)
+      params.require(:attachment).permit(:image, :video, :small, :medium, :large, :extra_large, :position)
     end
   end
 end

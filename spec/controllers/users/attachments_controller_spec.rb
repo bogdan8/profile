@@ -48,7 +48,7 @@ RSpec.describe Users::AttachmentsController, type: :controller do
     context 'with correct parameters' do
       it 'valud should be changed' do
         small = '5'
-        post :update, params: { id: attachment, attachment: build(:attachment, small: small).attributes}
+        post :update, params: { id: attachment, attachment: build(:attachment, small: small).attributes }
         expect(Attachment.last).to have_attributes(small: small)
         expect(response).to redirect_to(users_attachment_path(attachment))
       end
@@ -65,4 +65,3 @@ RSpec.describe Users::AttachmentsController, type: :controller do
     end
   end
 end
-  
