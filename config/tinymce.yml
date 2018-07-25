@@ -1,0 +1,15 @@
+toolbar:
+  - styleselect | bold italic | undo redo | searchreplace | preview
+  - image | media | link | charmap | forecolor | backcolor | numlist bullist | emoticons | nonbreaking | table
+plugins:
+  - image
+  - media
+  - link
+  - preview
+  - charmap
+  - textcolor colorpicker
+  - advlist
+  - nonbreaking
+  - searchreplace
+  - table
+  - emoticons

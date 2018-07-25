@@ -1,0 +1,70 @@
+= provide :about, 'active'
+
+.container.about
+  .row
+    .col-sm-12.like
+      .center
+        h4 Hi, I'm Bohdan Lytvyn
+        h4 I like to ride a bicycle every day #{fa_icon 'bicycle 1x', class: :green}
+  .row
+    .col-sm-12.col-md-6.col-lg-6.col-xl-6
+      h4 I love:
+      .container
+        .row
+          - @images.each do |attachment|
+            div class="col-sm-#{attachment.small} col-md-#{attachment.medium} col-lg-#{attachment.large} col-xl-#{attachment.extra_large}"
+              = image_tag attachment.image.url(:medium), class: 'image'
+    .col-sm-12.col-md-6.col-lg-6.col-xl-6
+      h4 My experience:
+      .row
+        .col-sm-12
+          ul
+            li.red
+              | Ruby On Rails:
+              ul
+                li.orange
+                  | Jul 2016 - Jun 2017
+                  ul
+                    li
+                      | Insilico
+                li.green
+                  | Jul 2018 - Present
+                  ul
+                    li
+                      | ManageBac
+
+            li.dark-yellow
+              | Java Script:
+              ul.orange
+                li
+                  | Jul 2017 - Jul 2018
+                  ul
+                    li
+                      | OSF-Global
+    .col-sm-12.col-md-6.col-lg-6.col-xl-6
+      h4 Where i am:
+      .flex-row
+        = link_to fa_icon('facebook-square 2x'), 'https://www.facebook.com/BoboAndBobo', target: :_blank, class: 'btn-margin'
+        = link_to fa_icon('linkedin-square 2x'), 'https://www.linkedin.com/in/bohdan-lytvyn-9724b5118/', target: :_blank, class: 'btn-margin'
+        = link_to fa_icon('bitbucket 2x'), 'https://bitbucket.org/bogdan8/', target: :_blank, class: 'btn-margin'
+        = link_to fa_icon('github 2x'), 'https://www.facebook.com/BoboAndBobo', target: :_blank, class: 'btn-margin black'
+    .col-sm-12.col-md-6.col-lg-6.col-xl-6
+      h4 My education:
+      .row
+        .col-sm-12
+          ul
+            li 
+              | Galytska Academy:
+              ul
+                li
+                  | Software Development 2011 - 2016
+              ul
+                li
+                  | Software Engineering 2016 - 2018
+
+    .col-sm-12.videos
+      h4 My videos:
+      .row
+        - @videos.each do |attachment|
+            div class="col-sm-#{attachment.small} col-md-#{attachment.medium} col-lg-#{attachment.large} col-xl-#{attachment.extra_large}"
+              = video_tag attachment.video, controls: true, class: :video

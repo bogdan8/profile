@@ -1,0 +1,18 @@
+.container.articles
+  .row
+    .col-sm-12.col-md-12.col-lg-8.col-xl-8
+      h2.my-4
+        | Interesting articles:
+      - @articles.decorate.each do |article|
+        .card.mb-4
+          .card-body
+            h2.card-title
+              = link_to article.title, [:users, article]
+            .custom-tinymce
+              == article.short_description
+          .card-footer.text-muted
+            = article.posted_date
+            |  by 
+            = article.author
+      = paginate @articles
+    = render 'users/articles/sidebar'

@@ -1,0 +1,24 @@
+/! Sidebar Widgets Column
+.col-sm-12.col-md-12.col-lg-4.col-xl-4
+  /! Search Widget
+  .card.my-4
+    h5.card-header Search
+    .card-body
+      = form_tag('/search', local: true, method: :get, class: 'form-inline') do
+        .input-group
+          = text_field_tag(:q, nil, data: { behavior: 'autocomplete' }, class: 'form-control', placeholder: 'Search for...')
+  /! Categories Widget
+  .card.my-4
+    h5.card-header Categories
+    .card-body
+      .row
+        .col-lg-12
+          - @categories.each do |category|
+            button.btn.btn-primary.btn-margin type="button"
+              = link_to category.title, category_path(category)
+              span.badge.badge-light= category.articles.count
+  /! Side Widget
+  .card.my-4
+    h5.card-header About
+    .card-body
+      | These are the articles that turned out to be very interesting to me.
