@@ -7,3 +7,4 @@
         = link_to 'New attachment', new_users_attachment_path, class: 'btn btn-success btn-margin'
         = link_to 'Edit', edit_users_attachment_path(attachment), class: 'btn btn-warning btn-margin'
         = link_to 'Delete', users_attachment_path(attachment), class: 'btn btn-danger btn-margin', method: :delete, data: { confirm: 'Are you sure?' }
+        = link_to 'Attachments', users_attachments_path, class: 'btn btn-primary btn-margin'
