@@ -1,18 +1,20 @@
 .container.attachments
   .row
-    .col-sm-12.col-md-12.col-lg-8.col-xl-8
+    .col-sm-12
       h2.my-4
         = link_to 'New attachment', new_users_attachment_path, class: 'btn btn-success'
-      .bd-example
-        ul.list-group
-          - @attachments.each do |attachment|
-            li.list-group-item
-              = get_attachment(attachment)
-              p small: #{attachment.small}
-              p medium: #{attachment.medium}
-              p large: #{attachment.large}
-              p extra large: #{attachment.extra_large}
-              p position: #{attachment.position}
-              = link_to 'Show', users_attachment_path(attachment), class: 'btn btn-success btn-margin'
-              = link_to 'Edit', edit_users_attachment_path(attachment), class: 'btn btn-warning btn-margin'
-              = link_to 'Delete', users_attachment_path(attachment), class: 'btn btn-danger btn-margin', method: :delete, data: { confirm: 'Are you sure?' }
+  .row
+    - @attachments.each do |attachment|
+      .col-sm-12.col-md-6.col-lg-6.col-xl-4
+        .card
+          .card-img-block
+            = get_attachment(attachment)
+          .card-body
+            p.card-text small: #{attachment.small}
+            p.card-text medium: #{attachment.medium}
+            p.card-text large: #{attachment.large}
+            p.card-text extra large: #{attachment.extra_large}
+            p.card-text position: #{attachment.position}
+            = link_to 'Show', users_attachment_path(attachment), class: 'btn btn-success btn-margin'
+            = link_to 'Edit', edit_users_attachment_path(attachment), class: 'btn btn-warning btn-margin'
+            = link_to 'Delete', users_attachment_path(attachment), class: 'btn btn-danger btn-margin', method: :delete, data: { confirm: 'Are you sure?' }

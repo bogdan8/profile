@@ -1,13 +1,18 @@
 /! Page Content
 .container.attachments
   .row
-    .col-sm-12.col-md-12.col-lg-8.col-xl-8
+    .col-sm-12
       h2.my-4
         Attachment
-      = get_attachment(@attachment)
-      p small: #{@attachment.small}
-      p medium: #{@attachment.medium}
-      p large: #{@attachment.large}
-      p extra large: #{@attachment.extra_large}
-      p position: #{@attachment.position}
+  .row
+    .col-sm-12.col-md-4.col-lg-4.col-xl-4
+      .card
+        .card-img-block
+          = get_attachment(@attachment)
+        .card-body
+          p.card-text small: #{@attachment.small}
+          p.card-text medium: #{@attachment.medium}
+          p.card-text large: #{@attachment.large}
+          p.card-text extra large: #{@attachment.extra_large}
+          p.card-text position: #{@attachment.position}
     = render 'users/attachments/sidebar', attachment: @attachment

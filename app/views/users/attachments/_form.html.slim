@@ -1,10 +1,15 @@
-= simple_form_for [:users, @attachment], wrapper: :horizontal_form do |f|
-  = get_attachment(@attachment)
-  = f.input :image
-  = f.input :video
-  = f.input :small
-  = f.input :medium
-  = f.input :large
-  = f.input :extra_large
-  = f.input :position
-  = f.submit :Add
+= simple_form_for [:users, @attachment] do |f|
+  .row
+    .col-sm-12.col-md-4.col-lg-4.col-xl-4
+      .card
+        .card-img-block
+          = get_attachment(@attachment)
+    .col-sm-12.col-md-8.col-lg-8.col-xl-8
+      = f.input :image
+      = f.input :video
+      = f.input :small
+      = f.input :medium
+      = f.input :large
+      = f.input :extra_large
+      = f.input :position
+      = f.submit action, class: 'btn btn-default'
