@@ -3,7 +3,7 @@ lock '3.11.0'
 set :repo_url, 'git@github.com:bogdan8/profile.git'
 set :application, 'profile'
 set :user, 'ubuntu'
-set :rvm_ruby_version, '2.4.3'
+set :rvm_ruby_version, '2.5.1'
 set :rvm_path, '/usr/local/rvm'
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log',
