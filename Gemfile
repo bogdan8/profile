@@ -32,6 +32,7 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 # for style
+gem 'acts_as_list'
 gem 'bootstrap', '~> 4.1.1'
 gem 'font-awesome-rails'
 gem 'sass-rails', '~> 5.0'
