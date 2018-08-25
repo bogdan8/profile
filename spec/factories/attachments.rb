@@ -20,11 +20,13 @@
 #  large              :string           default("")
 #  extra_large        :string           default("")
 #  position           :integer          default(0)
+#  extra_small        :string           default("")
 #
 
 FactoryBot.define do
   factory :attachment do
     image { Rack::Test::UploadedFile.new(Rails.root.join('spec/support/photo.jpg'), 'image/jpeg') }
+    extra_small 2
     small 2
     medium 2
     large 2

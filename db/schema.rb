@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180725191014) do
+ActiveRecord::Schema.define(version: 20180824104901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20180725191014) do
     t.string "large", default: ""
     t.string "extra_large", default: ""
     t.integer "position", default: 0
+    t.string "extra_small", default: ""
   end
 
   create_table "categories", force: :cascade do |t|
