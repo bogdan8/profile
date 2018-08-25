@@ -3,19 +3,25 @@
     .col-sm-12
       h2.my-4
         = link_to 'New attachment', new_users_attachment_path, class: 'btn btn-success'
-  .row
+  .row#sortable data-url="#{sort_users_attachments_path}"
     - @attachments.each do |attachment|
-      .col-sm-12.col-md-6.col-lg-6.col-xl-4
+      .col-12.col-sm-12.col-md-12.col-lg-12.col-xl-12 id="#{dom_id(attachment)}"
         .card
-          .card-img-block
-            = get_attachment(attachment)
-          .card-body
-            p.card-text extra small: #{attachment.extra_small}
-            p.card-text small: #{attachment.small}
-            p.card-text medium: #{attachment.medium}
-            p.card-text large: #{attachment.large}
-            p.card-text extra large: #{attachment.extra_large}
-            p.card-text position: #{attachment.position}
-            = link_to 'Show', users_attachment_path(attachment), class: 'btn btn-success btn-margin'
-            = link_to 'Edit', edit_users_attachment_path(attachment), class: 'btn btn-warning btn-margin'
-            = link_to 'Delete', users_attachment_path(attachment), class: 'btn btn-danger btn-margin', method: :delete, data: { confirm: 'Are you sure?' }
+          .row
+            .col-2
+              .card-img-block
+                = get_attachment(attachment)
+            .col-10
+              .card-body
+                .row
+                  .col-3.col-sm-4
+                    li.card-text extra small: #{attachment.extra_small}
+                    li.card-text small: #{attachment.small}
+                    li.card-text medium: #{attachment.medium}
+                  .col-3.col-sm-4
+                    li.card-text large: #{attachment.large}
+                    li.card-text extra large: #{attachment.extra_large}
+                    li.card-text position: #{attachment.position}
+                  .col-6.col-sm-4
+                    = link_to 'Edit', edit_users_attachment_path(attachment), class: 'btn btn-warning btn-margin'
+                    = link_to 'Delete', users_attachment_path(attachment), class: 'btn btn-danger btn-margin', method: :delete, data: { confirm: 'Are you sure?' }

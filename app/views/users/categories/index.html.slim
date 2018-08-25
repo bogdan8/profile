@@ -4,11 +4,16 @@
       h2.my-4
         = link_to 'New category', new_users_category_path, class: 'btn btn-success'
       .bd-example
-        ul.list-group
+        .row.list-group#sortable data-url="#{sort_users_categories_path}"
           - @categories.each do |category|
-            li.list-group-item
-              = category.title
-              = link_to 'Show', users_category_path(category), class: 'btn btn-success btn-margin'
-              = link_to 'Edit', edit_users_category_path(category), class: 'btn btn-warning btn-margin'
-              = link_to 'Delete', users_category_path(category), class: 'btn btn-danger btn-margin', method: :delete, data: { confirm: 'Are you sure?' }
+            .col-12.list-group-item id="#{dom_id(category)}"
+              .row
+                .col-4
+                  | title: #{category.title}
+                  br
+                  | position: #{category.position}
+                .col-8
+                  = link_to 'Show', users_category_path(category), class: 'btn btn-success btn-margin'
+                  = link_to 'Edit', edit_users_category_path(category), class: 'btn btn-warning btn-margin'
+                  = link_to 'Delete', users_category_path(category), class: 'btn btn-danger btn-margin', method: :delete, data: { confirm: 'Are you sure?' }
     = render 'users/categories/sidebar'
