@@ -18,7 +18,7 @@ module Users
     def create
       @attachment = Attachment.new(attachment_params)
       if @attachment.save
-        redirect_to [:users, :attachments], notice: 'Attachment was successfully created.'
+        redirect_to %i[users attachments], notice: 'Attachment was successfully created.'
       else
         render :new
       end
@@ -26,7 +26,7 @@ module Users
 
     def update
       if @attachment.update(attachment_params)
-        redirect_to [:users, :attachments], notice: 'Attachment was successfully updated.'
+        redirect_to %i[users attachments], notice: 'Attachment was successfully updated.'
       else
         render :edit
       end
@@ -34,14 +34,14 @@ module Users
 
     def destroy
       @attachment.destroy
-      redirect_to [:users, :attachments], notice: 'Attachment was successfully destroyed.'
+      redirect_to %i[users attachments], notice: 'Attachment was successfully destroyed.'
     end
 
     def sort
       params[:attachment].each_with_index do |id, index|
         Attachment.where(id: id).update_all(position: index + 1)
       end
-      redirect_to [:users, :attachments]
+      redirect_to %i[users attachments]
     end
 
     private
