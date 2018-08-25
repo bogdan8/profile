@@ -2,8 +2,10 @@
 #= require turbolinks
 #= require jquery3
 #= require jquery_ujs
+#= require jquery-ui/widgets/sortable
 #= require popper
 #= require bootstrap-sprockets
 #= require tinymce
 #= require jquery.easy-autocomplete
 #= require user/articles
+#= require user/sort
