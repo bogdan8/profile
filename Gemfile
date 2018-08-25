@@ -39,7 +39,7 @@ gem 'select2-rails'
 
 # for devise
 gem 'devise'
-gem 'devise-bootstrap-views', git: 'https://github.com/hisea/devise-bootstrap-views.git', branch: 'bootstrap4'
+gem 'devise-bootstrap-views', git: 'https://github.com/hisea/devise-bootstrap-views.git'
 
 group :development, :test do
   gem 'awesome_print'

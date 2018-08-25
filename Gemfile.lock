@@ -1,9 +1,8 @@
 GIT
   remote: https://github.com/hisea/devise-bootstrap-views.git
-  revision: 34e2c7b5d5c22295a2cea4265c4f31deba29be18
-  branch: bootstrap4
+  revision: d7b2a7e07d5608659e3504975baa580fab1a82ac
   specs:
-    devise-bootstrap-views (1.0.0.alpha1)
+    devise-bootstrap-views (1.1.0)
 
 GEM
   remote: https://rubygems.org/
