@@ -20,6 +20,7 @@
 #  large              :string           default("")
 #  extra_large        :string           default("")
 #  position           :integer          default(0)
+#  extra_small        :string           default("")
 #
 
 class Attachment < ApplicationRecord
