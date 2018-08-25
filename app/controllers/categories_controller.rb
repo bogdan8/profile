@@ -13,6 +13,6 @@ class CategoriesController < ApplicationController
   end
 
   def set_categories
-    @categories = Category.all
+    @categories = Category.order(:position)
   end
 end
