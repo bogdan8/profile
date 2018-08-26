@@ -14,9 +14,10 @@
       .row
         .col-lg-12
           - @categories.each do |category|
-            button.btn.btn-primary.btn-margin type="button"
-              = link_to category.title, category_path(category)
-              span.badge.badge-light= category.articles.count
+            = link_to category_path(category)
+              button.btn.btn-primary.btn-margin type="button"
+                = category.title
+                span.badge.badge-light= category.articles.count
   /! Side Widget
   .card.my-4
     h5.card-header About
