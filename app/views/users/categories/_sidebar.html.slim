@@ -19,7 +19,7 @@
       .row
         .col-lg-12
           - @categories.each do |category|
-            button.btn.btn-primary.btn-sm.btn-margin type="button"
+            button.btn.btn-primary.btn-sm.btn-margin type='button'
               = link_to category.title, users_category_path(category)
               span.badge.badge-light
                 = category.articles.count

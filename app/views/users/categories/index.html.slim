@@ -2,7 +2,6 @@
   .row
     .col-sm-12.col-md-12.col-lg-8.col-xl-8
       h2.my-4
-        = link_to 'New category', new_users_category_path, class: 'btn btn-success btn-sm'
       .bd-example
         .row.list-group#sortable data-url="#{sort_users_categories_path}"
           - @categories.each do |category|
