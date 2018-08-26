@@ -22,6 +22,7 @@ gem 'tinymce-rails'
 # for server
 gem 'dotenv-rails'
 gem 'puma', '~> 3.7'
+gem 'mini_racer'
 
 # for js
 gem 'coffee-rails', '~> 4.2'
