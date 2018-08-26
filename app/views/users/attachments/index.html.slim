@@ -1,7 +1,7 @@
 .container.attachments
   .row
     .col-12.col-sm-12.col-md-12.col-lg-8.col-xl-8
-      h2.my-4
+      h3.my-4
       .row#sortable data-url="#{sort_users_attachments_path}"
         - @attachments.each do |attachment|
           .col-12.col-sm-12.col-md-12.col-lg-12.col-xl-12 id="#{dom_id(attachment)}"
