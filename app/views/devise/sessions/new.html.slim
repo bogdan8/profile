@@ -14,5 +14,5 @@
               = f.check_box :remember_me, class: 'form-check-input'
               = t('activerecord.attributes.user.remember_me', default: 'Remember me')
         .form-group
-          = f.submit  t('.sign_in', default: 'Sign in'), class: 'btn btn-primary'
+          = f.submit  t('.sign_in', default: 'Sign in'), class: 'btn btn-primary btn-sm'
       = render 'devise/shared/links'

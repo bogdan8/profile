@@ -2,11 +2,8 @@
 
 .container.articles
   .row
-    /! Post Content Column
     .col-sm-12.col-md-12.col-lg-8.col-xl-8
-      /! Title
       h2.mt-4= @article.title
-      /! Author
       p.lead
         | by #{@article.author}
       hr/
@@ -14,7 +11,6 @@
         = @article.posted_date
         | , #{link_to 'original article', @article.link, target: :_blank}
       hr/
-      /! Post Content
       .custom-tinymce
         == @article.long_description
       hr/

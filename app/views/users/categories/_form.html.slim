@@ -1,3 +1,3 @@
-= simple_form_for [:users, @category], wrapper: :horizontal_form do |f|
+= simple_form_for [:users, category] do |f|
   = f.input :title
-  = f.submit :Add
+  = f.submit button, class: 'btn btn-success btn-sm'

@@ -20,7 +20,7 @@ module Users
       @category = Category.new(category_params)
 
       if @category.save
-        redirect_to [:users, @category], notice: 'Category was successfully created.'
+        redirect_to %i[users categories], notice: 'Category was successfully created.'
       else
         render :new
       end
@@ -28,7 +28,7 @@ module Users
 
     def update
       if @category.update(category_params)
-        redirect_to [:users, @category], notice: 'Category was successfully updated.'
+        redirect_to %i[users categories], notice: 'Category was successfully updated.'
       else
         render :edit
       end
