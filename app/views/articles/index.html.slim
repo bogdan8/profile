@@ -14,6 +14,6 @@
             = link_to 'Read more...', article, class: 'btn btn-primary btn-sm'
           .card-footer.text-muted
             = article.decorate.posted_date
-            ' by #{article.author}
+            '. by: #{article.author}
       = paginate @articles
     = render 'articles/sidebar'
