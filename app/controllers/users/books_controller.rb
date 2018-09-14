@@ -1,0 +1,50 @@
+# frozen_string_literal: true
+
+module Users
+  class BooksController < BaseController
+    before_action :set_book, only: %i[edit update destroy]
+    before_action :authenticate_user!
+
+    def index
+      @books = Book.all
+    end
+
+    def new
+      @book = Book.new
+    end
+
+    def edit; end
+
+    def create
+      @book = Book.new(book_params)
+      if @book.save
+        redirect_to %i[users books], notice: 'Book was successfully created'
+      else
+        render :new
+      end
+    end
+
+    def update
+      if @book.update(book_params)
+        redirect_to %i[users books], notice: 'Book was successfully updated'
+      else
+        render :edit
+      end
+    end
+
+    def destroy
+      @book.destroy
+      redirect_to %i[users books], notice: 'Book was successfully destroyed'
+    end
+
+    private
+
+    def set_book
+      @book = Book.find(params[:id])
+    end
+
+    def book_params
+      params.require(:book).permit(:image, :alt, :srt)
+    end
+  end
+end

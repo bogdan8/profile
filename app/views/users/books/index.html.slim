@@ -1,0 +1,9 @@
+.container.books
+  .row
+    .col-sm-12.col-md-12.col-lg-8.col-xl-8
+      .row
+        - @books.each do |book|
+          .col-sm-12.col-md-6.col-lg-4.col-xl-4
+            = image_tag book.image
+
+    = render 'users/books/sidebar'

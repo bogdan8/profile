@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :users do
     get :search, controller: :main
     resources :articles
+    resources :books, except: %i[show]
     resources :categories do
       patch :sort, on: :collection
     end
