@@ -44,7 +44,7 @@ module Users
     end
 
     def book_params
-      params.require(:book).permit(:image, :alt, :srt)
+      params.require(:book).permit(:image, :alt, :src)
     end
   end
 end
