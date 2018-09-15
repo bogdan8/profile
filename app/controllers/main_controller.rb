@@ -11,6 +11,7 @@ class MainController < ApplicationController
   def about
     @images = Attachment.images.sort! { |a, b| a.position <=> b.position }
     @videos = Attachment.videos
+    @books = Book.all
   end
 
   def contact; end
