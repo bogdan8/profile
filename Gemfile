@@ -22,8 +22,8 @@ gem 'tinymce-rails'
 # for server
 gem 'aws-sdk-s3'
 gem 'dotenv-rails'
-gem 'puma', '~> 3.7'
 gem 'mini_racer'
+gem 'puma', '~> 3.7'
 
 # for js
 gem 'coffee-rails', '~> 4.2'
