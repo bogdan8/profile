@@ -1,0 +1,18 @@
+.container.articles
+  .row
+    .col-sm-12.col-md-12.col-lg-12.col-xl-12
+      h3.my-4
+        | Statistics:
+    .col-sm-12.col-md-12.col-lg-12.col-xl-12
+      table.table.table-striped
+        thead
+          tr
+            th scope='col' id
+            th scope='col' IP Address
+            th scope='col' Browser
+        tbody
+          - @statistics.each do |statistic|
+            tr
+              th scope='row' #{statistic.id}
+              td #{statistic.ip_address}
+              td #{statistic.browser}
