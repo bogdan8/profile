@@ -20,6 +20,6 @@ class MainController < ApplicationController
   private
 
   def save_statistic
-    Statistic.create(ip_address: request.env['REMOTE_ADDR'], browser: request.env['HTTP_USER_AGENT'])
+    Statistic.create(ip_address: request.ip, browser: request.env['HTTP_USER_AGENT'])
   end
 end
