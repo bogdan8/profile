@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     get :search, controller: :main
     resources :articles
     resources :books, except: %i[show]
-    resources :statistics, only: %i[index]
+    resources :statistics, only: %i[index destroy]
     resources :categories do
       patch :sort, on: :collection
     end

@@ -1,8 +1,11 @@
 .container.articles
   .row
-    .col-sm-12.col-md-12.col-lg-12.col-xl-12
+    .col-sm-12.col-md-8.col-lg-10.col-xl-10
       h3.my-4
         | Statistics:
+    .col-sm-12.col-md-4.col-lg-2.col-xl-2
+      .my-4
+        = link_to 'Destroy all', users_statistic_path(0), class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' }
     .col-sm-12.col-md-12.col-lg-12.col-xl-12
       table.table.table-striped
         thead
@@ -10,9 +13,11 @@
             th scope='col' id
             th scope='col' IP Address
             th scope='col' Browser
+            th scope='col' Visited at
         tbody
           - @statistics.each do |statistic|
             tr
               th scope='row' #{statistic.id}
               td #{statistic.ip_address}
               td #{statistic.browser}
+              th #{l statistic.created_at}

@@ -7,5 +7,10 @@ module Users
     def index
       @statistics = Statistic.all
     end
+
+    def destroy
+      Statistic.destroy_all
+      redirect_to users_statistics_path
+    end
   end
 end
