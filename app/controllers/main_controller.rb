@@ -2,7 +2,7 @@
 
 class MainController < ApplicationController
   respond_to :json
-  before_action :save_statistic, only: %(about)
+  before_action :save_statistic, only: %(contact)
 
   def search
     @articles = Article.where('title LIKE ?', "%#{params[:q]}%").limit(5)
