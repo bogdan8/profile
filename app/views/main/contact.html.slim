@@ -6,7 +6,7 @@
       h3.my-4
         | My contacts:
     .col-sm-12.col-md-3.col-lg-3.col-xl-3[align="center"]
-      = image_tag 'avatar.jpg', class: 'img-responsive'
+      = image_tag @about.photo, class: 'img-responsive'
     .col-sm-12.col-md-9.col-lg-9.col-xl-9
       table.table.table-user-information
         tbody
@@ -35,19 +35,19 @@
             td
               | Phone Number:
             td
-              | +380 95 135-43-95
+              = @about.phone
           tr
             td
               | Current Job:
             td
-              = link_to 'ManageBac', 'https://www.managebac.com/', target: :_blank
+              = link_to 'ManageBac', @about.job_link, target: :_blank
           tr
             td
               | LinkedIn:
             td
-              = link_to 'LinkedIn', 'https://www.linkedin.com/in/bohdan-lytvyn-9724b5118/', target: :_blank
+              = link_to 'LinkedIn', @about.linkedin_link, target: :_blank
           tr
             td
               | My statistics:
             td
-              = link_to 'Statistics', 'https://sourcerer.io/bogdan8', target: :_blank
+              = link_to 'Statistics', @about.statistic_link, target: :_blank

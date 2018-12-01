@@ -1,0 +1,17 @@
+.container.abouts
+  .row
+    .col-md-12
+      h3.my-4
+        | About
+    .col-md-12
+      = simple_form_for [:users, @about] do |f|
+        = f.input :phone
+        = f.input :job_link
+        = f.input :linkedin_link
+        = f.input :facebook_link
+        = f.input :github_link
+        = f.input :bitbucket_link
+        = f.input :statistic_link
+        = f.input :photo
+
+        = f.button :submit, class: 'btn btn-success btn-sm'

@@ -21,4 +21,5 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
               = link_to 'Attachments', users_attachments_path, class: 'dropdown-item'
               = link_to 'Books', users_books_path, class: 'dropdown-item'
               = link_to 'Statistics', users_statistics_path, class: 'dropdown-item'
+              = link_to 'About', edit_users_about_path(id: 1), class: 'dropdown-item'
               = link_to 'Log out', destroy_user_session_path, class: 'dropdown-item', method: :delete

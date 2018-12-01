@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :articles
     resources :books, except: %i[show]
     resources :statistics, only: %i[index destroy]
+    resources :abouts, only: %i[edit update]
     resources :categories do
       patch :sort, on: :collection
     end
