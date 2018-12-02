@@ -41,13 +41,9 @@
               | Current Job:
             td
               = link_to 'ManageBac', 'test', target: :_blank
-          tr
-            td
-              | LinkedIn:
-            td
-              = link_to 'LinkedIn', 'test', target: :_blank
-          tr
-            td
-              | My statistics:
-            td
-              = link_to 'Statistics', 'test', target: :_blank
+          - @contact.networks.each do |network|
+            tr
+              td
+                = network.title
+              td
+                = link_to network.title, network.link, target: :_blank

@@ -9,6 +9,7 @@ git_source(:github) do |repo_name|
 end
 
 # for rails
+gem 'cocoon'
 gem 'draper'
 gem 'friendly_id'
 gem 'kaminari'

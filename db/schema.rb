@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181202124122) do
+ActiveRecord::Schema.define(version: 20181202133130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,6 +97,14 @@ ActiveRecord::Schema.define(version: 20181202124122) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
+  create_table "networks", force: :cascade do |t|
+    t.string "title"
+    t.string "link"
+    t.string "icon"
+    t.bigint "contact_id"
+    t.index ["contact_id"], name: "index_networks_on_contact_id"
+  end
+
   create_table "statistics", force: :cascade do |t|
     t.string "ip_address"
     t.string "browser"
@@ -121,4 +129,5 @@ ActiveRecord::Schema.define(version: 20181202124122) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "networks", "contacts"
 end

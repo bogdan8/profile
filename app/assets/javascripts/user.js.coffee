@@ -9,3 +9,4 @@
 #= require jquery.easy-autocomplete
 #= require user/articles
 #= require user/sort
+#= require cocoon

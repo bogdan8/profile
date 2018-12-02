@@ -26,7 +26,7 @@ module Users
     end
 
     def contact_params
-      params.require(:contact).permit(:name, :date_of_birth, :address, :email, :phone, :photo)
+      params.require(:contact).permit(:name, :date_of_birth, :address, :email, :phone, :photo, networks_attributes: [:id, :title, :link, :icon, :_destroy])
     end
   end
 end

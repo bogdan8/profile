@@ -10,7 +10,16 @@
         = f.input :address
         = f.input :email
         = f.input :phone
-        = image_tag f.object.photo
-        = f.input :photo
+        .row
+          .col-md-4
+            = image_tag f.object.photo
+          .col-md-8
+            = f.input :photo
+
+        #networks
+          = f.simple_fields_for :networks do |network|
+            = render 'network_fields', f: network
+          .links
+            = link_to_add_association 'Network', f, :networks, class: 'btn btn-warning btn-sm'
 
         = f.button :submit, class: 'btn btn-success btn-sm'
