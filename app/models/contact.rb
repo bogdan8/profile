@@ -2,23 +2,21 @@
 
 # == Schema Information
 #
-# Table name: abouts
+# Table name: contacts
 #
 #  id                 :bigint(8)        not null, primary key
+#  name               :string
+#  date_of_birth      :date
+#  address            :string
+#  email              :string
 #  phone              :string
-#  job_link           :string
-#  linkedin_link      :string
-#  facebook_link      :string
-#  github_link        :string
-#  bitbucket_link     :string
-#  statistic_link     :string
 #  photo_file_name    :string
 #  photo_content_type :string
 #  photo_file_size    :bigint(8)
 #  photo_updated_at   :datetime
 #
 
-class About < ApplicationRecord
+class Contact < ApplicationRecord
   size_photo_images = { medium: '300x300>', thumb: '100x100>' }
   path_photo_images = ':rails_root/public/images/:class/:attachment/:id/:style/:filename'
 

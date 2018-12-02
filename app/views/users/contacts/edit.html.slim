@@ -1,0 +1,16 @@
+.container.contacts
+  .row
+    .col-md-12
+      h3.my-4
+        | Contact
+    .col-md-12
+      = simple_form_for [:users, @contact] do |f|
+        = f.input :name
+        = f.input :date_of_birth
+        = f.input :address
+        = f.input :email
+        = f.input :phone
+        = image_tag f.object.photo
+        = f.input :photo
+
+        = f.button :submit, class: 'btn btn-success btn-sm'

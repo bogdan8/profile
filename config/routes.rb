@@ -3,21 +3,21 @@ Rails.application.routes.draw do
   namespace :users do
     get :search, controller: :main
     resources :articles
-    resources :books, except: %i[show]
+    resources :books, except: :show
     resources :statistics, only: %i[index destroy]
-    resources :abouts, only: %i[edit update]
+    resources :contacts, only: %i[edit update]
     resources :categories do
       patch :sort, on: :collection
     end
-    resources :attachments, except: %i[show] do
+    resources :attachments, except: :show do
       patch :sort, on: :collection      
     end
   end
   get :search, controller: :main
   resources :articles, only: %i[index show]
-  resources :categories, only: %i[show]
+  resources :categories, only: :show
+  resources :contacts, only: :show
   get :about, controller: :main
-  get :contact, controller: :main
   root to: 'main#about'
   get '*path', to: 'main#about'
 end

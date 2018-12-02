@@ -10,14 +10,13 @@ class MainController < ApplicationController
   end
 
   def about
-    @about = About.first
     @images = Attachment.images.sort! { |a, b| a.position <=> b.position }
     @videos = Attachment.videos
     @books = Book.all
   end
 
   def contact
-    @about = About.first
+    @contact = Contact.first
   end
 
   private
