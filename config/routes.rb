@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     resources :books, except: :show
     resources :statistics, only: %i[index destroy]
     resources :contacts, only: %i[edit update]
+    resources :experiences do
+      patch :sort, on: :collection
+    end
+
     resources :categories do
       patch :sort, on: :collection
     end

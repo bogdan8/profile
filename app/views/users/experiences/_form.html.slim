@@ -1,0 +1,8 @@
+= simple_form_for [:users, @experience] do |f|
+  .row
+    .col-sm-8
+      = f.input :name
+      = f.input :color
+      = f.input :position
+      = f.submit action, class: 'btn btn-success btn-sm'
+    = render 'sidebar'
