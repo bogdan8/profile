@@ -20,28 +20,16 @@
       .row
         .col-sm-12
           ul
-            li.red
-              | Ruby On Rails:
-              ul
-                li.orange
-                  | Jul 2016 - Jun 2017
-                  ul
-                    li
-                      | Insilico Soft
-                li.green
-                  | Jul 2018 - Present
-                  ul
-                    li
-                      | ManageBac
-
-            li.dark-yellow
-              | Java Script:
-              ul.orange
-                li
-                  | Jul 2017 - Jul 2018
-                  ul
-                    li
-                      | OSF-Global
+            - @experiences.each do |experience|
+              li style="color: #{experience.color}"
+                = experience.name
+                ul
+                  - experience.works.each do |work|
+                    li style="color: #{work.color}"
+                      = work.date
+                      ul
+                        li
+                          = work.title
     .col-sm-12.col-md-6.col-lg-6.col-xl-6
       h4 Where i am:
       .flex-row

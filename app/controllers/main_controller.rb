@@ -10,6 +10,7 @@ class MainController < ApplicationController
   end
 
   def about
+    @experiences = Experience.includes(:works).all
     @contact = Contact.first_or_create
     @images = Attachment.images.sort! { |a, b| a.position <=> b.position }
     @videos = Attachment.videos

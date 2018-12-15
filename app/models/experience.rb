@@ -11,5 +11,6 @@
 #
 
 class Experience < ApplicationRecord
-
+  has_many :works, inverse_of: :experience
+  accepts_nested_attributes_for :works, reject_if: :all_blank, allow_destroy: true
 end
