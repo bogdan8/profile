@@ -22,7 +22,7 @@
           ul
             - @experiences.each do |experience|
               li style="color: #{experience.color}"
-                = experience.name
+                = experience.title
                 ul
                   - experience.works.each do |work|
                     li style="color: #{work.color}"
