@@ -2,7 +2,7 @@
 
 module Users
   class ExperiencesController < BaseController
-    before_action :set_experience, only: %i[show edit update destroy]    
+    before_action :set_experience, only: %i[edit update destroy]
     before_action :authenticate_user!
 
     def index
@@ -51,7 +51,8 @@ module Users
     end
 
     def experience_params
-      params.require(:experience).permit(:title, :color, :position, works_attributes: %i[id title date color _destroy])
+      params.require(:experience).permit \
+        :title, :color, :position, works_attributes: %i[id title date color _destroy]
     end
   end
 end

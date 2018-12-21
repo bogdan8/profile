@@ -27,8 +27,11 @@ Metrics/AbcSize:
 
 Metrics/ModuleLength:
   Exclude:
-    - "**/*_spec.rb"
+    - '**/*_spec.rb'
 
 Metrics/BlockLength:
   Exclude:
-    - "**/*_spec.rb"
+    - '**/*_spec.rb'
+
+Rails/SkipsModelValidations:
+  Enabled: false

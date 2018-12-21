@@ -20,7 +20,7 @@ class Contact < ApplicationRecord
   size_photo_images = { medium: '300x300>', thumb: '100x100>' }
   path_photo_images = ':rails_root/public/images/:class/:attachment/:id/:style/:filename'
 
-  has_many :networks, inverse_of: :contact
+  has_many :networks, inverse_of: :contact, dependent: :destroy
   accepts_nested_attributes_for :networks, reject_if: :all_blank, allow_destroy: true
 
   has_attached_file :photo,
