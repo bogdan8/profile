@@ -2,12 +2,8 @@
 
 module Users
   class ContactsController < BaseController
-    before_action :set_contact, only: %i[index new edit update]
+    before_action :set_contact, only: %i[edit update]
     before_action :authenticate_user!
-
-    def index; end
-
-    def new; end
 
     def edit; end
 
