@@ -12,7 +12,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Contact, type: :model do
+RSpec.describe Experience, type: :model do
   describe '#relations' do
     it { is_expected.to have_many :works }
   end
