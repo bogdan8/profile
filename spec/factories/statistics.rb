@@ -17,4 +17,3 @@ FactoryBot.define do
     browser 'chrome'
   end
 end
-

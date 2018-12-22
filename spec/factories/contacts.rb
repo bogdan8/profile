@@ -19,7 +19,7 @@
 FactoryBot.define do
   factory :contact do
     name Faker::SiliconValley.character
-    date_of_birth DateTime.now
+    date_of_birth Time.zone.now
     address Faker::SiliconValley.character
     email Faker::SiliconValley.email
     phone '0999999999'

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ContactsController < ApplicationController
-  before_action :save_statistic, only: :contact
+  before_action :save_statistic
 
   def show
     @contact = Contact.first_or_create

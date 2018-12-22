@@ -16,4 +16,3 @@ FactoryBot.define do
     color 'green'
   end
 end
-
