@@ -3,12 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe CategoriesController, type: :controller do
-  let(:user) { create(:user) }
   let(:category) { create(:category) }
-
-  before(:each) do
-    sign_in user
-  end
 
   describe 'GET #show' do
     it 'renders the template with status' do
