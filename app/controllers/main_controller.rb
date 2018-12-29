@@ -15,8 +15,4 @@ class MainController < ApplicationController
     @videos = Attachment.videos
     @books = Book.all
   end
-
-  def contact
-    @contact = Contact.first
-  end
 end
