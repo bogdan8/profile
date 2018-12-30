@@ -12,7 +12,7 @@
 
 FactoryBot.define do
   factory :experience do
-    title Faker::SiliconValley.company
-    color 'green'
+    title { Faker::SiliconValley.company }
+    color { 'green' }
   end
 end

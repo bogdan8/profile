@@ -18,11 +18,11 @@
 
 FactoryBot.define do
   factory :contact do
-    name Faker::SiliconValley.character
-    date_of_birth Time.zone.now
-    address Faker::SiliconValley.character
-    email Faker::SiliconValley.email
-    phone '0999999999'
+    name { Faker::SiliconValley.character }
+    date_of_birth { Time.zone.now }
+    address { Faker::SiliconValley.character }
+    email { Faker::SiliconValley.email }
+    phone { '0999999999' }
     photo { Rack::Test::UploadedFile.new(Rails.root.join('spec', 'support', 'photo.jpg'), 'image/jpeg') }
   end
 end

@@ -18,11 +18,11 @@
 
 FactoryBot.define do
   factory :article do
-    title Faker::SiliconValley.character
-    short_description Faker::SiliconValley.quote
-    long_description Faker::SiliconValley.quote
-    author Faker::SiliconValley.character
-    link Faker::SiliconValley.url
-    posted_at 'Today'
+    title { Faker::SiliconValley.character }
+    short_description { Faker::SiliconValley.quote }
+    long_description { Faker::SiliconValley.quote }
+    author { Faker::SiliconValley.character }
+    link { Faker::SiliconValley.url }
+    posted_at { 'Today' }
   end
 end

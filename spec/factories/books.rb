@@ -18,7 +18,7 @@
 FactoryBot.define do
   factory :book do
     image { Rack::Test::UploadedFile.new(Rails.root.join('spec', 'support', 'photo.jpg'), 'image/jpeg') }
-    alt 'new image for testing'
-    src 'https://www.google.com.ua/'
+    alt { 'new image for testing' }
+    src { 'https://www.google.com.ua/' }
   end
 end

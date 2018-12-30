@@ -26,10 +26,10 @@
 FactoryBot.define do
   factory :attachment do
     image { Rack::Test::UploadedFile.new(Rails.root.join('spec', 'support', 'photo.jpg'), 'image/jpeg') }
-    extra_small 2
-    small 2
-    medium 2
-    large 2
-    extra_large 2
+    extra_small { 2 }
+    small { 2 }
+    medium { 2 }
+    large { 2 }
+    extra_large { 2 }
   end
 end

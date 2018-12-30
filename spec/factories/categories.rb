@@ -14,6 +14,6 @@
 
 FactoryBot.define do
   factory :category do
-    title Faker::SiliconValley.invention
+    title { Faker::SiliconValley.invention }
   end
 end

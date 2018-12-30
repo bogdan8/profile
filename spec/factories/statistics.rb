@@ -13,7 +13,7 @@
 #
 FactoryBot.define do
   factory :statistic do
-    ip_address Faker::Internet.ip_v4_address
-    browser 'chrome'
+    ip_address { Faker::Internet.ip_v4_address }
+    browser { 'chrome' }
   end
 end
