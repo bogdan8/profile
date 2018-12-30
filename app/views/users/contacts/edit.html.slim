@@ -12,7 +12,7 @@
         = f.input :phone
         .row
           .col-md-4
-            = image_tag f.object.photo, class: 'image'
+            = image_tag f.object.photo.url, class: 'image'
           .col-md-8
             = f.input :photo
 
