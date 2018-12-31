@@ -59,6 +59,7 @@ module Users
 
     def add_categories_to_article
       return if params[:article][:category_ids].nil?
+
       params[:article][:category_ids].each do |category|
         @article.categorizations.build(category_id: category) unless category.empty?
       end
