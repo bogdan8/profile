@@ -1,3 +1,5 @@
+require 'dotenv/load'
+
 set :stage, :production
 set :branch, 'develop'
 set :user, 'ubuntu'
@@ -7,7 +9,7 @@ role :web, ENV['PRODUCTION_SERVER']
 role :db, ENV['PRODUCTION_SERVER']
 
 server ENV['PRODUCTION_SERVER'], user: fetch(:user), roles: %w{app, web}, primary: true
-ssh_options = {keys: ["#{ENV['HOME']}/.ssh/amazon.pem"], forward_agent: true }
+ssh_options = { keys: ["#{ENV['HOME']}/.ssh/amazon.pem"], forward_agent: true }
 
 set :deploy_to, "/home/#{fetch(:user)}"
 
