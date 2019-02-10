@@ -54,7 +54,9 @@ module Users
     end
 
     def article_params
-      params.require(:article).permit(:title, :slug, :short_description, :long_description, :author, :link, :posted_at)
+      params.require(:article).permit \
+        :title, :slug, :short_description, :long_description,
+        :author, :link, :posted_at
     end
 
     def add_categories_to_article

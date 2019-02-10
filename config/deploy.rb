@@ -3,7 +3,7 @@ lock '3.11.0'
 set :repo_url, 'git@github.com:bogdan8/profile.git'
 set :application, 'profile'
 set :user, 'ubuntu'
-set :rvm_ruby_version, '2.5.1'
+set :rvm_ruby_version, '2.6.0'
 set :rvm_path, '/usr/local/rvm'
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log',
@@ -11,7 +11,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log',
                                                'tmp/cache',
                                                'tmp/sockets')
 
-set :linked_files, fetch(:linked_files, []).push('config/database.yml', '.env')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', '.env', 'public/images/*')
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'

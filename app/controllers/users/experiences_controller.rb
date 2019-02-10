@@ -52,7 +52,8 @@ module Users
 
     def experience_params
       params.require(:experience).permit \
-        :title, :color, :position, works_attributes: %i[id title date color _destroy]
+        :title, :color, :position,
+        works_attributes: %i[id title date color _destroy]
     end
   end
 end

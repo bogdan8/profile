@@ -57,7 +57,8 @@ module Users
     end
 
     def category_params
-      params.require(:category).permit(:title, :slug)
+      params.require(:category).permit \
+        :title, :slug
     end
   end
 end
