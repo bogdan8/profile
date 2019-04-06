@@ -62,5 +62,5 @@
         h4 The books that I read:
         .row
           - @books.each do |book|
-            .col-6.col-md-4.col-lg-3.col-xl-2
+            .col-6.col-md-4.col-lg-3.col-xl-2.margin-bottom-book
               = link_to image_tag(book.image.url, class: 'image', alt: "#{book.alt}"), book.src, target: :_blan

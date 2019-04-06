@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   namespace :users do
     get :search, controller: :main
     resources :articles
-    resources :books, except: :show
+    resources :books, except: :show do
+      patch :sort, on: :collection
+    end
     resources :statistics, only: %i[index destroy]
     resources :contacts, only: %i[edit update]
     resources :experiences do

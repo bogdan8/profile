@@ -37,6 +37,13 @@ module Users
       redirect_to %i[users books], notice: 'Book was successfully destroyed'
     end
 
+    def sort
+      params[:book].each_with_index do |id, index|
+        Book.where(id: id).update_all(position: index + 1)
+      end
+      redirect_to %i[users books]
+    end
+
     private
 
     def set_book
