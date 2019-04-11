@@ -30,11 +30,13 @@
                       ul
                         li
                           = work.title
+
     .col-sm-12.col-md-6.col-lg-6.col-xl-6
       h4 Where i am:
       .flex-row
         - @contact.networks.each do |network|
           = link_to fa_icon("#{network.icon} 2x"), network.link, target: :_blank, class: 'btn-margin'
+
     .col-sm-12.col-md-6.col-lg-6.col-xl-6
       h4 My education:
       .row
