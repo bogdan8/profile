@@ -10,3 +10,6 @@
 #= require user/articles
 #= require user/sort
 #= require cocoon
+#= require select2-full
+
+$('.select2').select2 theme: 'bootstrap'

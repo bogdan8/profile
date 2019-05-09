@@ -18,6 +18,9 @@ Rails.application.routes.draw do
     resources :attachments, except: :show do
       patch :sort, on: :collection      
     end
+    resources :category_books do
+      patch :sort, on: :collection
+    end
   end
   get :search, controller: :main
   resources :articles, only: %i[index show]

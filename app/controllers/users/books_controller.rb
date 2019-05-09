@@ -3,6 +3,7 @@
 module Users
   class BooksController < BaseController
     before_action :set_book, only: %i[edit update destroy]
+    before_action :set_category_books, only: %i[new edit]
     before_action :authenticate_user!
 
     def index
@@ -50,9 +51,13 @@ module Users
       @book = Book.find(params[:id])
     end
 
+    def set_category_books
+      @category_books = CategoryBook.all
+    end
+
     def book_params
       params.require(:book).permit \
-        :image, :alt, :src
+        :image, :alt, :src, :category_book_id
     end
   end
 end

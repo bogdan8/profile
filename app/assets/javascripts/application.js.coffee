@@ -4,10 +4,6 @@
 #= require jquery_ujs
 #= require popper
 #= require bootstrap-sprockets
-#= require tinymce
 #= require jquery.easy-autocomplete
-#= require select2-full
 #= require articles
 #= require fancybox.min
-
-$('#article_category_ids').select2 theme: "bootstrap"

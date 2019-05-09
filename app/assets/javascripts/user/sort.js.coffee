@@ -4,6 +4,4 @@ document.addEventListener 'turbolinks:load', ->
       url: $(this).data('url')
       type: 'PATCH'
       data: $(this).sortable('serialize')
-    return
-  return
 
