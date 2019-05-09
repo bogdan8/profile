@@ -18,6 +18,7 @@
 #
 
 class Book < ApplicationRecord
+  belongs_to :category_book
   size_book_images = { medium: '300x300>', thumb: '100x100>' }
   path_book_images = ':rails_root/public/images/:class/:book/:id/:style/:filename'
 
@@ -26,4 +27,6 @@ class Book < ApplicationRecord
                     path: path_book_images,
                     default_url: '/images/missing.png'
   validates_attachment_content_type :image, content_type: %r{\Aimage\/.*\Z}
+
+  validates :category_book, presence: true
 end

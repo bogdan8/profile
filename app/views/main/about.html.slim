@@ -58,11 +58,13 @@
           - @videos.each do |attachment|
               div class="col-sm-#{attachment.small} col-md-#{attachment.medium} col-lg-#{attachment.large} col-xl-#{attachment.extra_large}"
                 = video_tag attachment.video, controls: true, class: :video
-
-    - @books.any?
-      .col-sm-12.books
-        h4 The books that I read:
+    h4 The books that I read:
+    .col-sm-12.category_books
+      - @category_books.each do |category_book|
+        h4
+          = category_book.title
         .row
-          - @books.each do |book|
+          - category_book.books.each do |book|
             .col-6.col-md-4.col-lg-3.col-xl-2.margin-bottom-book
               = link_to image_tag(book.image.url, class: 'image', alt: "#{book.alt}"), book.src, target: :_blan
+        hr

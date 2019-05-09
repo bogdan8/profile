@@ -14,5 +14,6 @@ class MainController < ApplicationController
     @images = Attachment.images.sort! { |a, b| a.position <=> b.position }
     @videos = Attachment.videos
     @books = Book.all
+    @category_books = CategoryBook.includes(:books).all
   end
 end

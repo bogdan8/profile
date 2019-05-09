@@ -9,6 +9,6 @@
             = image_tag(f.object.image.url, class: 'image')
       = f.input :alt
       = f.input :src
-      = f.input :category_book_id, collection: @category_books, class: 'select2'
+      = f.input :category_book_id, collection: @category_books, class: 'select2', include_blank: false, include_hidden: false
       = f.submit action, class: 'btn btn-success btn-sm'
     = render 'sidebar'
