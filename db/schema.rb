@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2019_05_09_145309) do
 
   create_table "category_books", force: :cascade do |t|
     t.string "title"
+    t.integer "position", default: 0, null: false
   end
 
   create_table "contacts", force: :cascade do |t|
