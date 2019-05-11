@@ -59,7 +59,7 @@
               div class="col-sm-#{attachment.small} col-md-#{attachment.medium} col-lg-#{attachment.large} col-xl-#{attachment.extra_large}"
                 = video_tag attachment.video, controls: true, class: :video
     h4 The books that I read:
-    .col-sm-12.category_books
+    .col-sm-12.books
       - @category_books.each do |category_book|
         h4
           = category_book.title
