@@ -18,7 +18,7 @@
 #
 
 class Book < ApplicationRecord
-  acts_as_list scope: %i(category_book_id)
+  acts_as_list scope: %i[category_book_id]
 
   default_scope { order(:category_book_id, :position) }
 

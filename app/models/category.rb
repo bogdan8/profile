@@ -17,6 +17,8 @@ class Category < ApplicationRecord
 
   acts_as_list
 
+  default_scope { order(:position) }
+
   friendly_id :title, use: :slugged
 
   has_many :categorizations, dependent: :destroy
