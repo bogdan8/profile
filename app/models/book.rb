@@ -18,6 +18,10 @@
 #
 
 class Book < ApplicationRecord
+  acts_as_list scope: %i(category_book_id)
+
+  default_scope { order(:category_book_id, :position) }
+
   belongs_to :category_book
   size_book_images = { medium: '300x300>', thumb: '100x100>' }
   path_book_images = ':rails_root/public/images/:class/:book/:id/:style/:filename'

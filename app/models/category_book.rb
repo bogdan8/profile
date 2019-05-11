@@ -9,5 +9,7 @@
 #
 
 class CategoryBook < ApplicationRecord
+  acts_as_list
+
   has_many :books, dependent: :destroy
 end

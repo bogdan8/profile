@@ -7,7 +7,7 @@ module Users
     before_action :authenticate_user!
 
     def index
-      @books = Book.all
+      @books = Book.all.includes(:category_book)
     end
 
     def new

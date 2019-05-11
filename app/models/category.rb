@@ -14,6 +14,9 @@
 
 class Category < ApplicationRecord
   extend FriendlyId
+
+  acts_as_list
+
   friendly_id :title, use: :slugged
 
   has_many :categorizations, dependent: :destroy

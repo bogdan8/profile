@@ -24,6 +24,8 @@
 #
 
 class Attachment < ApplicationRecord
+  acts_as_list
+
   size_initiative_images = { medium: '300x300>', thumb: '100x100>' }
   path_initiative_images = ':rails_root/public/images/:class/:attachment/:id/:style/:filename'
 
