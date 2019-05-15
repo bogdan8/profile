@@ -3,9 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe Users::BooksController, type: :controller do
-  let(:user)          { create(:user) }
-  let(:category_book) { create(:category_book) }
-  let(:book)          { create(:book, category_book: category_book) }
+  let(:user)     { create(:user) }
+  let(:category) { create(:category_book) }
+  let(:book)     { create(:book, category_book: category) }
 
   before(:each) do
     sign_in user
@@ -31,7 +31,7 @@ RSpec.describe Users::BooksController, type: :controller do
     context 'with correct parameters' do
       it 'the number of books should increase' do
         books = Book.count
-        post :create, params: { book: build(:book, category_book: category_book).attributes }
+        post :create, params: { book: build(:book, category_book: category).attributes }
         expect(Book.count).to eq(books + 1)
       end
     end
@@ -39,8 +39,8 @@ RSpec.describe Users::BooksController, type: :controller do
 
   describe 'POST #update' do
     it 'should renders the edit template' do
-      post :update, params: { id: book, book: build(:book, category_book: category_book, alt: 'image text updated').attributes }
-      expect(Book.last).to have_attributes(alt: 'image text updated')
+      post :update, params: { id: book, book: build(:book, category_book: category, alt: 'text updated').attributes }
+      expect(Book.last).to have_attributes(alt: 'text updated')
       expect(response).to redirect_to(%i[users books])
     end
   end
