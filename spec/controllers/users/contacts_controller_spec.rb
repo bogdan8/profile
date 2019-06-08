@@ -18,7 +18,7 @@ RSpec.describe Users::ContactsController, type: :controller do
     end
   end
 
-  describe 'POST #update' do
+  describe 'PUT #update' do
     it 'should renders the edit template' do
       post :update, params: { id: contact, contact: build(:contact, name: 'new name').attributes }
       expect(Contact.last).to have_attributes(name: 'new name')

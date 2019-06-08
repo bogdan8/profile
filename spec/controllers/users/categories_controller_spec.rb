@@ -44,7 +44,7 @@ RSpec.describe Users::CategoriesController, type: :controller do
     end
   end
 
-  describe 'POST #update' do
+  describe 'PUT #update' do
     context 'with correct parameters' do
       it 'value should be changed' do
         title = 'new title for category'

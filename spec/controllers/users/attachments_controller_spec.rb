@@ -26,7 +26,7 @@ RSpec.describe Users::AttachmentsController, type: :controller do
     end
   end
 
-  describe 'POST #create' do
+  describe 'PUT #create' do
     context 'with correct parameters' do
       it 'the number of attachments should increse' do
         attachments = Attachment.count
@@ -36,7 +36,7 @@ RSpec.describe Users::AttachmentsController, type: :controller do
     end
   end
 
-  describe 'POST #update' do
+  describe 'PUT #update' do
     context 'with correct parameters' do
       it 'valud should be changed' do
         small = '5'

@@ -37,7 +37,7 @@ RSpec.describe Users::BooksController, type: :controller do
     end
   end
 
-  describe 'POST #update' do
+  describe 'PUT #update' do
     it 'should renders the edit template' do
       post :update, params: { id: book, book: build(:book, category_book: category, alt: 'text updated').attributes }
       expect(Book.last).to have_attributes(alt: 'text updated')

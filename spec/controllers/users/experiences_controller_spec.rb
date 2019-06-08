@@ -44,7 +44,7 @@ RSpec.describe Users::ExperiencesController, type: :controller do
     end
   end
 
-  describe 'POST #update' do
+  describe 'PUT #update' do
     it 'value should be changed' do
       title = 'new title for experience'
       post :update, params: { id: experience, experience: build(:experience, title: title).attributes }
