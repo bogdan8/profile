@@ -34,10 +34,11 @@ class Attachment < ApplicationRecord
   has_attached_file :image,
                     styles: size_initiative_images,
                     path: path_initiative_images,
+                    url: '/images/:class/:attachment/:id/:style/:filename',
                     default_url: '/images/missing.png'
   validates_attachment_content_type :image, content_type: %r{\Aimage\/.*\Z}
 
-  has_attached_file :video
+  has_attached_file :video, url: '/videos/:class/:attachment/:id/:style/:filename'
 
   def self.images
     select(&:image?)

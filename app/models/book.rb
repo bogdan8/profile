@@ -29,6 +29,7 @@ class Book < ApplicationRecord
   has_attached_file :image,
                     styles: size_book_images,
                     path: path_book_images,
+                    url: '/images/:class/:book/:id/:style/:filename',
                     default_url: '/images/missing.png'
   validates_attachment_content_type :image, content_type: %r{\Aimage\/.*\Z}
 
