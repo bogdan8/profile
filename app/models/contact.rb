@@ -26,6 +26,6 @@ class Contact < ApplicationRecord
   has_attached_file :photo,
                     styles: size_photo_images,
                     path: path_photo_images,
-                    default_url: '/images/missing.png'
+                    url: '/images/:class/:attachment/:id/:style/:filename'
   validates_attachment_content_type :photo, content_type: %r{\Aimage\/.*\Z}
 end
