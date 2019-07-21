@@ -1,21 +1,18 @@
 require 'dotenv/load'
 
 set :stage, :production
-set :branch, 'develop'
-set :user, 'ubuntu'
+set :branch, 'master'
+set :user, 'root'
 
 role :app, ENV['PRODUCTION_SERVER']
 role :web, ENV['PRODUCTION_SERVER']
 role :db, ENV['PRODUCTION_SERVER']
 
 server ENV['PRODUCTION_SERVER'], user: fetch(:user), roles: %w{app, web}, primary: true
-ssh_options = { keys: ["#{ENV['HOME']}/.ssh/amazon.pem"], forward_agent: true }
 
 set :deploy_to, "/home/#{fetch(:user)}"
 
 set :rails_env, :production
-
-set :ssh_options, { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
 
 set :puma_init_active_record, true
 
