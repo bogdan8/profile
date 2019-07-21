@@ -10,13 +10,13 @@ rails_env = 'production'
 environment rails_env
 
 # Set up socket location
-bind 'unix:///home/ubuntu/shared/tmp/sockets/profile-puma.sock'
+bind 'unix:///home/root/shared/tmp/sockets/profile-puma.sock'
 # Logging
 stdout_redirect 'log/profile-puma.error.log', 'log/profile-puma.access.log', true
 
 # Set master PID and state locations
-pidfile '/home/ubuntu/shared/tmp/pids/profile-puma.pid'
-state_path '/home/ubuntu/shared/tmp/pids/profile-puma.state'
+pidfile '/home/root/shared/tmp/pids/profile-puma.pid'
+state_path '/home/root/shared/tmp/pids/profile-puma.state'
 activate_control_app
 
 on_worker_boot do
