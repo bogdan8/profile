@@ -6,7 +6,7 @@
     .col-md-12
       = simple_form_for [:users, @contact] do |f|
         = f.input :name
-        = f.input :date_of_birth
+        = f.input :date_of_birth, start_year: Date.today.year - 50, end_year: Date.today.year
         = f.input :address
         = f.input :email
         = f.input :phone
