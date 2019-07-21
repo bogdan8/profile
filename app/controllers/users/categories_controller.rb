@@ -20,7 +20,7 @@ module Users
       @category = Category.new(category_params)
 
       if @category.save
-        redirect_to [:users, @category], notice: 'Category was successfully created.'
+        redirect_to %i[users categories], notice: 'Category was successfully created.'
       else
         render :new
       end
@@ -28,7 +28,7 @@ module Users
 
     def update
       if @category.update(category_params)
-        redirect_to [:users, @category], notice: 'Category was successfully updated.'
+        redirect_to %i[users categories], notice: 'Category was successfully updated.'
       else
         render :edit
       end
@@ -39,6 +39,13 @@ module Users
       redirect_to users_categories_url, notice: 'Category was successfully destroyed.'
     end
 
+    def sort
+      params[:category].each_with_index do |id, index|
+        Category.where(id: id).update_all(position: index + 1)
+      end
+      redirect_to %i[users categories]
+    end
+
     private
 
     def set_category
@@ -46,11 +53,12 @@ module Users
     end
 
     def set_categories
-      @categories = Category.all
+      @categories = Category.order(:position)
     end
 
     def category_params
-      params.require(:category).permit(:title, :slug)
+      params.require(:category).permit \
+        :title, :slug
     end
   end
 end

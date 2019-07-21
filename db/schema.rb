@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180709201807) do
+ActiveRecord::Schema.define(version: 2019_05_09_145309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,22 @@ ActiveRecord::Schema.define(version: 20180709201807) do
     t.string "medium", default: ""
     t.string "large", default: ""
     t.string "extra_large", default: ""
+    t.integer "position", default: 0
+    t.string "extra_small", default: ""
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.bigint "image_file_size"
+    t.datetime "image_updated_at"
+    t.string "alt"
+    t.string "src"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "position", default: 0
+    t.bigint "category_book_id"
+    t.index ["category_book_id"], name: "index_books_on_category_book_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -49,6 +65,7 @@ ActiveRecord::Schema.define(version: 20180709201807) do
     t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "position", default: 0
   end
 
   create_table "categorizations", force: :cascade do |t|
@@ -57,6 +74,29 @@ ActiveRecord::Schema.define(version: 20180709201807) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["article_id", "category_id"], name: "index_categorizations_on_article_id_and_category_id"
+  end
+
+  create_table "category_books", force: :cascade do |t|
+    t.string "title"
+    t.integer "position", default: 0, null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "name"
+    t.date "date_of_birth"
+    t.string "address"
+    t.string "email"
+    t.string "phone"
+    t.string "photo_file_name"
+    t.string "photo_content_type"
+    t.bigint "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
+  create_table "experiences", force: :cascade do |t|
+    t.string "title"
+    t.string "color"
+    t.integer "position", default: 0
   end
 
   create_table "friendly_id_slugs", id: :serial, force: :cascade do |t|
@@ -69,6 +109,21 @@ ActiveRecord::Schema.define(version: 20180709201807) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "networks", force: :cascade do |t|
+    t.string "title"
+    t.string "link"
+    t.string "icon"
+    t.bigint "contact_id"
+    t.index ["contact_id"], name: "index_networks_on_contact_id"
+  end
+
+  create_table "statistics", force: :cascade do |t|
+    t.string "ip_address"
+    t.string "browser"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -88,4 +143,14 @@ ActiveRecord::Schema.define(version: 20180709201807) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "works", force: :cascade do |t|
+    t.string "title"
+    t.string "date"
+    t.string "color"
+    t.bigint "experience_id"
+    t.index ["experience_id"], name: "index_works_on_experience_id"
+  end
+
+  add_foreign_key "networks", "contacts"
+  add_foreign_key "works", "experiences"
 end

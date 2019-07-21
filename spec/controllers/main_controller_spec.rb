@@ -10,12 +10,4 @@ RSpec.describe MainController, type: :controller do
       expect(response.status).to eq(200)
     end
   end
-
-  describe 'GET #contact' do
-    it 'renders the template with status' do
-      get :contact
-      expect(response).to render_template(:contact)
-      expect(response.status).to eq(200)
-    end
-  end
 end

@@ -7,10 +7,10 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
       ul.navbar-nav.ml-auto
         li class="nav-item #{yield :about}"
           = link_to 'About', about_path, class: 'nav-link'
+        li class="nav-item #{yield :contact}"
+          = link_to 'Contact', contact_path(0), class: 'nav-link'
         li class="nav-item #{yield :articles}"
           = link_to 'Articles', articles_path, class: 'nav-link'
-        li class="nav-item #{yield :contact}"
-          = link_to 'Contact', contact_path, class: 'nav-link'
         - if user_signed_in?
           li.nav-item.dropdown
             a#navbarDropdown.nav-link.dropdown-toggle[href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
@@ -18,5 +18,10 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
             .dropdown-menu[aria-labelledby="navbarDropdown"]
               = link_to 'Articles', users_articles_path, class: 'dropdown-item'
               = link_to 'Categories', users_categories_path, class: 'dropdown-item'
+              = link_to 'Book Category', users_category_books_path, class: 'dropdown-item'
               = link_to 'Attachments', users_attachments_path, class: 'dropdown-item'
-              = link_to "Log out", destroy_user_session_path, class: 'dropdown-item', method: :delete
+              = link_to 'Books', users_books_path, class: 'dropdown-item'
+              = link_to 'Statistics', users_statistics_path, class: 'dropdown-item'
+              = link_to 'Contacts', edit_users_contact_path(id: 1), class: 'dropdown-item'
+              = link_to 'Experiences', users_experiences_path, class: 'dropdown-item'
+              = link_to 'Log out', destroy_user_session_path, class: 'dropdown-item', method: :delete

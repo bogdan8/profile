@@ -3,10 +3,10 @@
 .container.contact
   .row
     .col-sm-12.col-md-12.col-lg-12.col-xl-12
-      h2.my-4
+      h3.my-4
         | My contacts:
     .col-sm-12.col-md-3.col-lg-3.col-xl-3[align="center"]
-      = image_tag 'avatar.jpg', class: 'img-responsive'
+      = image_tag @contact.photo.url, class: 'img-responsive'
     .col-sm-12.col-md-9.col-lg-9.col-xl-9
       table.table.table-user-information
         tbody
@@ -14,40 +14,36 @@
             td
               | Full name:
             td
-              | Lytvyn Bohdan
+              = @contact.name
           tr
             td
               | Date of Birth:
             td
-              | 07/08/1994
+              = l(@contact.date_of_birth)
           tr
             td
               | Home Address:
             td
-              | Ukraine, Ivano-Frankivsk
+              = @contact.address
           tr
             td
               | Email:
             td
-              a[href="mailto:bogdanlitvin8@gmail.com"]
-                | bogdanlitvin8@gmail.com
+              a[href="mailto:#{@contact.email}"]
+                = @contact.email
           tr
             td
               | Phone Number:
             td
-              | +380 95 135-43-95
+              = @contact.phone
           tr
             td
               | Current Job:
             td
               = link_to 'ManageBac', 'https://www.managebac.com/', target: :_blank
-          tr
-            td
-              | LinkedIn:
-            td
-              = link_to 'LinkedIn', 'https://www.linkedin.com/in/bohdan-lytvyn-9724b5118/', target: :_blank
-          tr
-            td
-              | My statistics:
-            td
-              = link_to 'Statistics', 'https://sourcerer.io/bogdan8', target: :_blank
+          - @contact.networks.each do |network|
+            tr
+              td
+                = network.title
+              td
+                = link_to network.title, network.link, target: :_blank

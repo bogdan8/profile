@@ -4,7 +4,7 @@
       | Buttons
     .card-body
       .input-group
-        = link_to 'New category', new_users_category_path, class: 'btn btn-success'
+        = link_to 'New category', new_users_category_path, class: 'btn btn-success btn-sm'
   .card.my-4
     h5.card-header
       | Search
@@ -19,7 +19,7 @@
       .row
         .col-lg-12
           - @categories.each do |category|
-            button.btn.btn-primary.btn-margin type="button"
+            button.btn.btn-primary.btn-sm.btn-margin type='button'
               = link_to category.title, users_category_path(category)
               span.badge.badge-light
                 = category.articles.count

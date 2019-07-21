@@ -44,13 +44,13 @@ RSpec.describe Users::CategoriesController, type: :controller do
     end
   end
 
-  describe 'POST #update' do
+  describe 'PUT #update' do
     context 'with correct parameters' do
       it 'value should be changed' do
         title = 'new title for category'
         post :update, params: { id: category.slug, category: build(:category, title: title).attributes }
         expect(Category.last).to have_attributes(title: title)
-        expect(response).to redirect_to(users_category_path(category.id))
+        expect(response).to redirect_to(users_categories_path)
       end
     end
 

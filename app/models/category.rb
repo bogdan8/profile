@@ -9,10 +9,16 @@
 #  slug       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  position   :integer          default(0)
 #
 
 class Category < ApplicationRecord
   extend FriendlyId
+
+  acts_as_list
+
+  default_scope { order(:position) }
+
   friendly_id :title, use: :slugged
 
   has_many :categorizations, dependent: :destroy

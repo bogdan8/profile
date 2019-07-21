@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '2.4.3'
+ruby '2.6.0'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
@@ -9,18 +9,21 @@ git_source(:github) do |repo_name|
 end
 
 # for rails
+gem 'cocoon'
 gem 'draper'
 gem 'friendly_id'
 gem 'kaminari'
 gem 'paperclip'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'rails', '~> 5.1.5'
+gem 'rails'
 gem 'simple_form'
 gem 'slim'
 gem 'tinymce-rails'
 
 # for server
+gem 'aws-sdk-s3'
 gem 'dotenv-rails'
+gem 'mini_racer'
 gem 'puma', '~> 3.7'
 
 # for js
@@ -32,13 +35,15 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 # for style
+gem 'acts_as_list'
 gem 'bootstrap', '~> 4.1.1'
 gem 'font-awesome-rails'
 gem 'sass-rails', '~> 5.0'
+gem 'select2-rails'
 
 # for devise
 gem 'devise'
-gem 'devise-bootstrap-views', git: 'https://github.com/hisea/devise-bootstrap-views.git', branch: 'bootstrap4'
+gem 'devise-bootstrap-views', git: 'https://github.com/hisea/devise-bootstrap-views.git'
 
 group :development, :test do
   gem 'awesome_print'

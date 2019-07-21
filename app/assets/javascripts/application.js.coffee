@@ -4,6 +4,6 @@
 #= require jquery_ujs
 #= require popper
 #= require bootstrap-sprockets
-#= require tinymce
 #= require jquery.easy-autocomplete
 #= require articles
+#= require fancybox.min

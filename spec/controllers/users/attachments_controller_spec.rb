@@ -18,14 +18,6 @@ RSpec.describe Users::AttachmentsController, type: :controller do
     end
   end
 
-  describe 'GET #show' do
-    it 'renders the template with status' do
-      get :show, params: { id: attachment.id }
-      expect(response).to render_template(:show)
-      expect(response.status).to eq(200)
-    end
-  end
-
   describe 'GET #new' do
     it 'renders the template with status' do
       get :new
@@ -34,7 +26,7 @@ RSpec.describe Users::AttachmentsController, type: :controller do
     end
   end
 
-  describe 'POST #create' do
+  describe 'PUT #create' do
     context 'with correct parameters' do
       it 'the number of attachments should increse' do
         attachments = Attachment.count
@@ -44,13 +36,13 @@ RSpec.describe Users::AttachmentsController, type: :controller do
     end
   end
 
-  describe 'POST #update' do
+  describe 'PUT #update' do
     context 'with correct parameters' do
       it 'valud should be changed' do
         small = '5'
-        post :update, params: { id: attachment, attachment: build(:attachment, small: small).attributes}
+        post :update, params: { id: attachment, attachment: build(:attachment, small: small).attributes }
         expect(Attachment.last).to have_attributes(small: small)
-        expect(response).to redirect_to(users_attachment_path(attachment))
+        expect(response).to redirect_to(users_attachments_path)
       end
     end
   end
@@ -65,4 +57,3 @@ RSpec.describe Users::AttachmentsController, type: :controller do
     end
   end
 end
-  

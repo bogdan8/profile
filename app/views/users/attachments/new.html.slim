@@ -1,7 +1,7 @@
 .container.attachments
   .row
     .col-md-12
-      h2.my-4
+      h3.my-4
         | New attachment
     .col-md-12
-      = render 'form', attachment: @attachment
+      = render 'form', attachment: @attachment, action: :Add

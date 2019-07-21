@@ -1,0 +1,25 @@
+.container.contacts
+  .row
+    .col-md-12
+      h3.my-4
+        | Contact
+    .col-md-12
+      = simple_form_for [:users, @contact] do |f|
+        = f.input :name
+        = f.input :date_of_birth
+        = f.input :address
+        = f.input :email
+        = f.input :phone
+        .row
+          .col-md-4
+            = image_tag f.object.photo.url, class: 'image'
+          .col-md-8
+            = f.input :photo
+
+        #networks
+          = f.simple_fields_for :networks do |network|
+            = render 'network_fields', f: network
+          .links
+            = link_to_add_association 'Network', f, :networks, class: 'btn btn-warning btn-sm'
+
+        = f.button :submit, class: 'btn btn-success btn-sm'

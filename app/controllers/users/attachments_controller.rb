@@ -2,14 +2,12 @@
 
 module Users
   class AttachmentsController < BaseController
-    before_action :set_attachment, only: %i[show edit update destroy]
+    before_action :set_attachment, only: %i[edit update destroy]
     before_action :authenticate_user!
 
     def index
-      @attachments = Attachment.all
+      @attachments = Attachment.order(:position)
     end
-
-    def show; end
 
     def new
       @attachment = Attachment.new
@@ -20,7 +18,7 @@ module Users
     def create
       @attachment = Attachment.new(attachment_params)
       if @attachment.save
-        redirect_to [:users, @attachment], notice: 'Attachment was successfully created.'
+        redirect_to %i[users attachments], notice: 'Attachment was successfully created.'
       else
         render :new
       end
@@ -28,7 +26,7 @@ module Users
 
     def update
       if @attachment.update(attachment_params)
-        redirect_to [:users, @attachment], notice: 'Attachment was successfully updated.'
+        redirect_to %i[users attachments], notice: 'Attachment was successfully updated.'
       else
         render :edit
       end
@@ -36,7 +34,14 @@ module Users
 
     def destroy
       @attachment.destroy
-      redirect_to users_attachments_url, notice: 'Attachment was successfully destroyed.'
+      redirect_to %i[users attachments], notice: 'Attachment was successfully destroyed.'
+    end
+
+    def sort
+      params[:attachment].each_with_index do |id, index|
+        Attachment.where(id: id).update_all(position: index + 1)
+      end
+      redirect_to %i[users attachments]
     end
 
     private
@@ -46,7 +51,8 @@ module Users
     end
 
     def attachment_params
-      params.require(:attachment).permit(:image, :video, :small, :medium, :large, :extra_large)
+      params.require(:attachment).permit \
+        :image, :video, :extra_small, :small, :medium, :large, :extra_large, :position
     end
   end
 end

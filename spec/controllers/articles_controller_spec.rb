@@ -3,12 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe ArticlesController, type: :controller do
-  let(:user) { create(:user) }
   let(:article) { create(:article) }
-
-  before(:each) do
-    sign_in user
-  end
 
   describe 'GET #index' do
     it 'renders the template with status' do

@@ -4,9 +4,9 @@
       | Buttons
     .card-body
       .input-group
-        = link_to 'New article', new_users_article_path, class: 'btn btn-success btn-margin'
-        = link_to 'Edit', edit_users_article_path(article), class: 'btn btn-warning btn-margin'
-        = link_to 'Delete', users_article_path(article), class: 'btn btn-danger btn-margin', method: :delete, data: { confirm: 'Are you sure?' }
+        = link_to 'New article', new_users_article_path, class: 'btn btn-success btn-margin btn-sm'
+        = link_to 'Edit', edit_users_article_path(article), class: 'btn btn-warning btn-margin btn-sm'
+        = link_to 'Delete', users_article_path(article), class: 'btn btn-danger btn-margin btn-sm', method: :delete, data: { confirm: 'Are you sure?' }
   .card.my-4
     h5.card-header
       | Search
@@ -21,7 +21,7 @@
       .row
         .col-lg-12
           - @categories.each do |category|
-            button.btn.btn-primary.btn-margin type="button"
+            button.btn.btn-primary.btn-margin.btn-sm type='button'
               = link_to category.title, users_category_path(category)
               span.badge.badge-light
                 = category.articles.count

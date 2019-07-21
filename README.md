@@ -1,3 +1,3 @@
-# Initiatives
+# Profile
 
-*This project is designed to tell about me*
+*This project is designed to tell about me!*

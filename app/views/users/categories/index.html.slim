@@ -1,14 +1,17 @@
 .container.categories
   .row
     .col-sm-12.col-md-12.col-lg-8.col-xl-8
-      h2.my-4
-        = link_to 'New category', new_users_category_path, class: 'btn btn-success'
-      .bd-example
-        ul.list-group
-          - @categories.each do |category|
-            li.list-group-item
-              = category.title
-              = link_to 'Show', users_category_path(category), class: 'btn btn-success btn-margin'
-              = link_to 'Edit', edit_users_category_path(category), class: 'btn btn-warning btn-margin'
-              = link_to 'Delete', users_category_path(category), class: 'btn btn-danger btn-margin', method: :delete, data: { confirm: 'Are you sure?' }
+      h3.my-4
+      .row.list-group#sortable data-url="#{sort_users_categories_path}"
+        - @categories.each do |category|
+          .col-12.list-group-item id="#{dom_id(category)}"
+            .row
+              .col-4.col-sm-4.col-md-6.col-lg-6.col-xl-6
+                | title: #{category.title}
+                br
+                | position: #{category.position}
+              .col-8.col-sm-8.col-md-6.col-lg-6.col-xl-6.right
+                = link_to 'Show', users_category_path(category), class: 'btn btn-success btn-sm btn-margin'
+                = link_to 'Edit', edit_users_category_path(category), class: 'btn btn-warning btn-sm btn-margin'
+                = link_to 'Delete', users_category_path(category), class: 'btn btn-danger btn-sm btn-margin', method: :delete, data: { confirm: 'Are you sure?' }
     = render 'users/categories/sidebar'

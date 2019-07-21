@@ -9,10 +9,11 @@
 #  slug       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  position   :integer          default(0)
 #
 
 FactoryBot.define do
   factory :category do
-    title Faker::SiliconValley.invention
+    title { Faker::SiliconValley.invention }
   end
 end

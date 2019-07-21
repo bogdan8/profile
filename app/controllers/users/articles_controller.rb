@@ -7,7 +7,7 @@ module Users
     before_action :authenticate_user!
 
     def index
-      @articles = Article.page(params[:page]).per(5)
+      @articles = Article.order(updated_at: :desc).page(params[:page]).per(5)
     end
 
     def show; end
@@ -50,15 +50,18 @@ module Users
     end
 
     def set_categories
-      @categories = Category.all
+      @categories = Category.order(:position)
     end
 
     def article_params
-      params.require(:article).permit(:title, :slug, :short_description, :long_description, :author, :link, :posted_at)
+      params.require(:article).permit \
+        :title, :slug, :short_description, :long_description,
+        :author, :link, :posted_at
     end
 
     def add_categories_to_article
       return if params[:article][:category_ids].nil?
+
       params[:article][:category_ids].each do |category|
         @article.categorizations.build(category_id: category) unless category.empty?
       end

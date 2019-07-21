@@ -1,0 +1,19 @@
+.container.experiences
+  .row
+    .col-12.col-sm-12.col-md-12.col-lg-8.col-xl-8
+      h3.my-4
+      .row#sortable data-url="#{sort_users_experiences_path}"
+        - @experiences.each do |experience|
+          .col-12.col-sm-12.col-md-12.col-lg-12.col-xl-12 id="#{dom_id(experience)}"
+            .card
+              .row
+                .col-12
+                  .card-body
+                    .row
+                      .col-12.col-sm-8.col-md-8.col-lg-8.col-xl-8
+                        li.card-text title: #{experience.title}
+                        li.card-text color: #{experience.color}
+                      .col-12.col-sm-4.col-md-4.col-lg-4.col-xl-4.right
+                        = link_to 'Edit', edit_users_experience_path(experience), class: 'btn btn-warning btn-margin btn-sm'
+                        = link_to 'Delete', users_experience_path(experience), class: 'btn btn-danger btn-margin btn-sm', method: :delete, data: { confirm: 'Are you sure?' }
+    = render 'sidebar'

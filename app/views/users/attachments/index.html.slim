@@ -1,17 +1,27 @@
 .container.attachments
   .row
-    .col-sm-12.col-md-12.col-lg-8.col-xl-8
-      h2.my-4
-        = link_to 'New attachment', new_users_attachment_path, class: 'btn btn-success'
-      .bd-example
-        ul.list-group
-          - @attachments.each do |attachment|
-            li.list-group-item
-              = get_attachment(attachment)
-              p small: #{attachment.small}
-              p medium: #{attachment.medium}
-              p large: #{attachment.large}
-              p extra large: #{attachment.extra_large}
-              = link_to 'Show', users_attachment_path(attachment), class: 'btn btn-success btn-margin'
-              = link_to 'Edit', edit_users_attachment_path(attachment), class: 'btn btn-warning btn-margin'
-              = link_to 'Delete', users_attachment_path(attachment), class: 'btn btn-danger btn-margin', method: :delete, data: { confirm: 'Are you sure?' }
+    .col-12.col-sm-12.col-md-12.col-lg-8.col-xl-8
+      h3.my-4
+      .row#sortable data-url="#{sort_users_attachments_path}"
+        - @attachments.each do |attachment|
+          .col-12.col-sm-12.col-md-12.col-lg-12.col-xl-12 id="#{dom_id(attachment)}"
+            .card
+              .row
+                .col-2
+                  .card-img-block
+                    = get_attachment(attachment)
+                .col-10
+                  .card-body
+                    .row
+                      .col-12.col-sm-4.col-md-4.col-lg-4.col-xl-4
+                        li.card-text extra small: #{attachment.extra_small}
+                        li.card-text small: #{attachment.small}
+                        li.card-text medium: #{attachment.medium}
+                      .col-12.col-sm-4.col-md-4.col-lg-4.col-xl-4
+                        li.card-text large: #{attachment.large}
+                        li.card-text extra large: #{attachment.extra_large}
+                        li.card-text position: #{attachment.position}
+                      .col-12.col-sm-4.col-md-4.col-lg-4.col-xl-4.right
+                        = link_to 'Edit', edit_users_attachment_path(attachment), class: 'btn btn-warning btn-margin btn-sm'
+                        = link_to 'Delete', users_attachment_path(attachment), class: 'btn btn-danger btn-margin btn-sm', method: :delete, data: { confirm: 'Are you sure?' }
+    = render 'sidebar'

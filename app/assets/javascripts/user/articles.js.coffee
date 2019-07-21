@@ -12,6 +12,4 @@ document.addEventListener 'turbolinks:load', ->
       url = $input.getSelectedItemData().url
       $input.val ''
       Turbolinks.visit url
-      return
   $input.easyAutocomplete options
-  return

@@ -1,0 +1,13 @@
+= simple_form_for [:users, @experience] do |f|
+  .row
+    .col-sm-8
+      = f.input :title
+      = f.input :color
+      = f.input :position
+      #works
+        = f.simple_fields_for :works do |ff|
+          = render 'work_fields', f: ff
+        .links
+          = link_to_add_association 'add work', f, :works, class: 'btn btn-warning btn-sm'
+      = f.submit action, class: 'btn btn-success btn-sm'
+    = render 'sidebar'
