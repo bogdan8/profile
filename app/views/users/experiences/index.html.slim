@@ -11,8 +11,8 @@
                   .card-body
                     .row
                       .col-12.col-sm-8.col-md-8.col-lg-8.col-xl-8
-                        li.card-text title: #{experience.title}
-                        li.card-text color: #{experience.color}
+                        .card-text title: #{experience.title}
+                        .card-text color: #{experience.color}
                       .col-12.col-sm-4.col-md-4.col-lg-4.col-xl-4.right
                         = link_to 'Edit', edit_users_experience_path(experience), class: 'btn btn-warning btn-margin btn-sm'
                         = link_to 'Delete', users_experience_path(experience), class: 'btn btn-danger btn-margin btn-sm', method: :delete, data: { confirm: 'Are you sure?' }
