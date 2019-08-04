@@ -12,7 +12,7 @@
       .container
         .row
           - @images.each do |attachment|
-            div class="col-#{attachment.extra_small} col-sm-#{attachment.small} col-md-#{attachment.medium} col-lg-#{attachment.large} col-xl-#{attachment.extra_large}"
+            div class="margin-bottom-attachment col-#{attachment.extra_small} col-sm-#{attachment.small} col-md-#{attachment.medium} col-lg-#{attachment.large} col-xl-#{attachment.extra_large}"
               a data-fancybox='gallery' href="#{attachment.image.url(:original)}"
                 = image_tag attachment.image.url(:medium), class: 'image'
     .col-sm-12.col-md-6.col-lg-6.col-xl-6
