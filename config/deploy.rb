@@ -25,9 +25,6 @@ namespace :puma do
   before :start, :make_dirs
 end
 
-namespace :deploy do
-  end
-
 namespace :logs do
 	desc "tail rails logs" 
 	task :tail do
