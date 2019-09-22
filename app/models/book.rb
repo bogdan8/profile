@@ -22,15 +22,9 @@ class Book < ApplicationRecord
 
   default_scope { order(:category_book_id, :position) }
 
-  belongs_to :category_book
-  size_book_images = { medium: '300x300>', thumb: '100x100>' }
-  path_book_images = ':rails_root/public/images/:class/:book/:id/:style/:filename'
+  has_one_attached :image
 
-  has_attached_file :image,
-                    styles: size_book_images,
-                    path: path_book_images,
-                    url: '/images/:class/:book/:id/:style/:filename'
-  validates_attachment_content_type :image, content_type: %r{\Aimage\/.*\Z}
+  belongs_to :category_book
 
   validates :category_book, presence: true
 end

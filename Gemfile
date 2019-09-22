@@ -19,6 +19,7 @@ gem 'rails'
 gem 'simple_form'
 gem 'slim'
 gem 'tinymce-rails'
+gem 'mini_magick'
 
 # for server
 gem 'dotenv-rails'
@@ -68,6 +69,8 @@ group :development do
   gem 'annotate'
   gem 'brakeman'
   gem 'bullet'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'capistrano',         require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rails',   require: false

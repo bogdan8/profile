@@ -12,6 +12,8 @@
 /tmp/
 /public/images/*
 /public/videos/*
+storage/
+
 
 # Used by dotenv library to load environment variables.
 # .env

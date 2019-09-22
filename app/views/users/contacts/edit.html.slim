@@ -11,8 +11,9 @@
         = f.input :email
         = f.input :phone
         .row
-          .col-md-4
-            = image_tag f.object.photo.url, class: 'image'
+          - if f.object.photo.attached?
+            .col-md-4
+              = image_tag f.object.photo, class: 'image'
           .col-md-8
             = f.input :photo
 

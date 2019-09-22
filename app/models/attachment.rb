@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: attachments
@@ -9,10 +8,6 @@
 #  image_content_type :string
 #  image_file_size    :integer
 #  image_updated_at   :datetime
-#  video_file_name    :string
-#  video_content_type :string
-#  video_file_size    :integer
-#  video_updated_at   :datetime
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  small              :string           default("")
@@ -28,22 +23,9 @@ class Attachment < ApplicationRecord
 
   default_scope { order(:position) }
 
-  size_initiative_images = { medium: '300x300>', thumb: '100x100>' }
-  path_initiative_images = ':rails_root/public/images/:class/:attachment/:id/:style/:filename'
-
-  has_attached_file :image,
-                    styles: size_initiative_images,
-                    path: path_initiative_images,
-                    url: '/images/:class/:attachment/:id/:style/:filename'
-  validates_attachment_content_type :image, content_type: %r{\Aimage\/.*\Z}
-
-  has_attached_file :video, url: '/videos/:class/:attachment/:id/:style/:filename'
+  has_one_attached :image
 
   def self.images
-    select(&:image?)
-  end
-
-  def self.videos
-    select(&:video?)
+    select { |a| a.image.attached? }
   end
 end

@@ -28,5 +28,5 @@ Rails.application.routes.draw do
   resources :contacts, only: :show
   get :about, controller: :main
   root to: 'main#about'
-  get '*path', to: 'main#about'
+  get '*path', to: 'main#about', constraints: lambda { |req| req.path.exclude? 'rails/active_storage' }
 end
