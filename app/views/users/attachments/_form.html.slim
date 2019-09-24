@@ -1,10 +1,12 @@
+- attached = @attachment.image.attached?
 = simple_form_for [:users, @attachment] do |f|
   .row
-    .col-sm-12.col-md-3.col-lg-3.col-xl-3
-      .card
-        .card-img-block
-          = get_attachment(@attachment)
-    .col-sm-12.col-md-9.col-lg-5.col-xl-5
+    - if attached
+      .col-sm-12.col-md-3.col-lg-3.col-xl-3
+        .card
+          .card-img-block
+            = get_attachment(@attachment)
+    div class="#{attached ? 'col-sm-12 col-md-9 col-lg-5 col-xl-5' : 'col-sm-12 col-md-12 col-lg-8 col-xl-8'}"
       = f.input :image
       = f.input :extra_small
       = f.input :small

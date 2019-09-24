@@ -6,7 +6,7 @@ module Users
     before_action :authenticate_user!
 
     def index
-      @attachments = Attachment.order(:position)
+      @attachments = Attachment.includes(image_attachment: :blob).order(:position)
     end
 
     def new

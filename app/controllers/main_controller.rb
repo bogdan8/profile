@@ -11,7 +11,7 @@ class MainController < ApplicationController
   def about
     @experiences = Experience.includes(:works).all
     @contact = Contact.first_or_create
-    @images = Attachment.images.sort! { |a, b| a.position <=> b.position }
+    @images = Attachment.includes(image_attachment: :blob).images.sort! { |a, b| a.position <=> b.position }
     @books = Book.all
     @category_books = CategoryBook.includes(:books).all
   end
