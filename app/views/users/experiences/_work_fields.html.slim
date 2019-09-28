@@ -1,8 +1,8 @@
-.row
-  .col-sm-1
+.row.justify-content-end
   .col-sm-11
     .nested-fields
       = f.input :title
       = f.input :date
       = f.input :color
-      = link_to_remove_association 'remove work', f, class: 'btn btn-danger btn-sm'
+      .row.justify-content-end
+        = link_to_remove_association 'Remove', f, class: 'btn btn-danger btn-sm'
