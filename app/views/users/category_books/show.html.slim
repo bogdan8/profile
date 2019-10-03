@@ -5,7 +5,7 @@
         = @category_book.title
       - @category_book.books.each do |book|
         .col-sm-12.col-md-6.col-lg-4.col-xl-4.margin-bottom-book.list-group-item id="#{dom_id(book)}"
-          = image_tag book.image.url, class: 'image', alt: "#{book.alt}"
+          = image_tag book.image, class: 'image', alt: "#{book.alt}"
           = link_to 'Edit', edit_users_book_path(book), class: 'btn btn-warning btn-margin btn-sm'
           = link_to 'Delete', users_book_path(book), class: 'btn btn-danger btn-margin btn-sm', method: :delete, data: { confirm: 'Are you sure?' }
 
