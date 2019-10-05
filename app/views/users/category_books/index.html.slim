@@ -11,7 +11,7 @@
                 br
                 | Position: #{category_book.position}
               .col-8.col-sm-8.col-md-6.col-lg-6.col-xl-6.right
-                = link_to 'show', users_category_book_path(category_book), class: 'btn btn-success btn-sm btn-margin'
-                = link_to 'edit', edit_users_category_book_path(category_book), class: 'btn btn-warning btn-sm btn-margin'
-                = link_to 'delete', users_category_book_path(category_book), class: 'btn btn-danger btn-sm btn-margin', method: :delete, data: { confirm: 'are you sure?' }
+                = link_to 'Show', users_category_book_path(category_book), class: 'btn btn-success btn-sm btn-margin'
+                = link_to 'Edit', edit_users_category_book_path(category_book), class: 'btn btn-warning btn-sm btn-margin'
+                = link_to 'Delete', users_category_book_path(category_book), class: 'btn btn-danger btn-sm btn-margin', method: :delete, data: { confirm: 'are you sure?' }
     = render 'users/category_books/sidebar'
