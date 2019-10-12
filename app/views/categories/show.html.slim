@@ -4,9 +4,9 @@
   .row
     .col-sm-12.col-md-12.col-lg-8.col-xl-8
       h3.my-4
-        = @category.title
+        = current_category.title
         | :
-      - @category.articles.each do |article|
+      - current_category.articles.each do |article|
         .card.mb-4
           .card-body
             h3.card-title

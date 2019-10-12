@@ -1,18 +1,15 @@
 # frozen_string_literal: true
 
 class CategoriesController < ApplicationController
-  before_action :set_category, only: %i[show]
-  before_action :set_categories, only: %i[show]
-
   def show; end
 
   private
 
-  def set_category
-    @category = Category.friendly.find(params[:id])
+  helper_method def current_category
+    @current_category ||= Category.friendly.find(params[:id])
   end
 
-  def set_categories
-    @categories = Category.order(:position)
+  helper_method def categories
+    @categories ||= Category.order(:position)
   end
 end

@@ -1,22 +1,17 @@
 # frozen_string_literal: true
 
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[show]
-  before_action :set_categories, only: %i[index show]
-
   def index
     @articles = Article.order(updated_at: :desc).page(params[:page]).per(5)
   end
 
-  def show; end
-
-  private
-
-  def set_article
+  def show
     @article = Article.friendly.find(params[:id]).decorate
   end
 
-  def set_categories
-    @categories = Category.order(:position)
+  private
+
+  helper_method def categories
+    @categories ||= Category.order(:position)
   end
 end
