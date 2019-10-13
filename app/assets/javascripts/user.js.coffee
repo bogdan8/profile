@@ -12,4 +12,9 @@
 #= require cocoon
 #= require select2-full
 
-$('.select2').select2 theme: 'bootstrap'
+document.addEventListener 'turbolinks:load', ->
+  $('.js-select2').select2
+    allowClear: true
+    width: 'resolve'
+		theme: 'bootstrap'
+

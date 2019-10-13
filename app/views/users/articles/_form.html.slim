@@ -1,6 +1,6 @@
 = simple_form_for [:users, article] do |f|
   = f.input :title
-  = f.input :category_ids, collection: @categories.order(:title), label_method: :title, value_method: :id, prompt: :Categories, input_html: { multiple: true }
+  = f.input :category_ids, as: :select, collection: @categories.order(:title), label: 'Categories', label_method: :title, value_method: :id, input_html: { multiple: true, class: 'js-select2' }
   = f.input :short_description, input_html: { class: 'tinymce', rows: 20, cols: 60 }
   = tinymce
   = f.input :long_description, input_html: { class: 'tinymce', rows: 30, cols: 120 }
