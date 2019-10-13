@@ -2,7 +2,6 @@
 
 module Users
   class ArticlesController < BaseController
-    before_action :set_article, only: %i[show edit update destroy]
     before_action :set_categories, only: %i[index show new edit]
     before_action :authenticate_user!
 
@@ -29,24 +28,24 @@ module Users
     end
 
     def update
-      Categorization.where(article_id: @article.id).delete_all
+      Categorization.where(article_id: current_article.id).delete_all
       add_categories_to_article
-      if @article.update(article_params)
-        redirect_to [:users, @article], notice: 'Article was successfully updated.'
+      if current_article.update(article_params)
+        redirect_to [:users, current_article], notice: 'Article was successfully updated.'
       else
         render :edit
       end
     end
 
     def destroy
-      @article.destroy
+      current_article.destroy
       redirect_to users_articles_url, notice: 'Article was successfully destroyed.'
     end
 
     private
 
-    def set_article
-      @article = Article.friendly.find(params[:id]).decorate
+    helper_method def current_article
+      @current_article ||= Article.friendly.find(params[:id]).decorate
     end
 
     def set_categories
