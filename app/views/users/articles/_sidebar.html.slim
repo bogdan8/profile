@@ -18,7 +18,7 @@
     .card-body
       .row
         .col-lg-12
-          - @categories.each do |category|
+          - categories.each do |category|
             button.btn.btn-primary.btn-margin.btn-sm type='button'
               = link_to category.title, users_category_path(category)
               span.badge.badge-light

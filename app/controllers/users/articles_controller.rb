@@ -2,7 +2,6 @@
 
 module Users
   class ArticlesController < BaseController
-    before_action :set_categories, only: %i[index show new edit]
     before_action :authenticate_user!
 
     def index
@@ -48,8 +47,8 @@ module Users
       @current_article ||= Article.friendly.find(params[:id]).decorate
     end
 
-    def set_categories
-      @categories = Category.order(:position)
+    helper_method def categories
+      @categories ||= Category.order(:position)
     end
 
     def article_params
@@ -62,7 +61,7 @@ module Users
       return if params[:article][:category_ids].nil?
 
       params[:article][:category_ids].each do |category|
-        @article.categorizations.build(category_id: category) unless category.empty?
+        current_article.categorizations.build(category_id: category) unless category.empty?
       end
     end
   end
