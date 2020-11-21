@@ -12,7 +12,7 @@ class MainController < ApplicationController
     @experiences = Experience.includes(:works).all
     @contact = Contact.first_or_create
     @images = Attachment.includes(image_attachment: :blob).images.sort! { |a, b| a.position <=> b.position }
-    @books = Book.all
-    @category_books = CategoryBook.includes(:books).all
+    @category_books = CategoryBook.includes(books: { image_attachment: :blob }).all
+    @certificates = Certificate.includes(image_attachment: :blob)
   end
 end

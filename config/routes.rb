@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
     resources :statistics, only: %i[index destroy]
     resources :contacts, only: %i[edit update]
+    resources :certificates, except: :show
     resources :experiences do
       patch :sort, on: :collection
     end

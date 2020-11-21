@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_22_084126) do
+ActiveRecord::Schema.define(version: 2020_11_21_124417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,10 +49,6 @@ ActiveRecord::Schema.define(version: 2019_09_22_084126) do
   end
 
   create_table "attachments", force: :cascade do |t|
-    t.string "image_file_name"
-    t.string "image_content_type"
-    t.integer "image_file_size"
-    t.datetime "image_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "small", default: ""
@@ -64,10 +60,6 @@ ActiveRecord::Schema.define(version: 2019_09_22_084126) do
   end
 
   create_table "books", force: :cascade do |t|
-    t.string "image_file_name"
-    t.string "image_content_type"
-    t.bigint "image_file_size"
-    t.datetime "image_updated_at"
     t.string "alt"
     t.string "src"
     t.datetime "created_at", null: false
@@ -96,6 +88,14 @@ ActiveRecord::Schema.define(version: 2019_09_22_084126) do
   create_table "category_books", force: :cascade do |t|
     t.string "title"
     t.integer "position", default: 0, null: false
+  end
+
+  create_table "certificates", force: :cascade do |t|
+    t.string "alt"
+    t.string "src"
+    t.date "completed_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "contacts", force: :cascade do |t|

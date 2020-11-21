@@ -1,0 +1,12 @@
+.container.certificates
+  .row
+    .col-sm-12.col-md-12.col-lg-8.col-xl-8
+      h3.my-4
+      .row
+        - @certificates.each do |certificate|
+          .col-sm-12.col-md-6.col-lg-4.col-xl-4.margin-bottom-certificate.list-group-item id="#{dom_id(certificate)}"
+            = image_tag certificate.image.variant(resize: '300x300'), class: 'image', alt: "#{certificate.alt}"
+            = link_to 'Edit', edit_users_certificate_path(certificate), class: 'btn btn-warning btn-margin btn-sm'
+            = link_to 'Delete', users_certificate_path(certificate), class: 'btn btn-danger btn-margin btn-sm', method: :delete, data: { confirm: 'Are you sure?' }
+
+    = render 'users/certificates/sidebar'

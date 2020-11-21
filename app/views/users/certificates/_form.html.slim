@@ -1,0 +1,14 @@
+= simple_form_for [:users, certificate] do |f|
+  .row
+    .col-sm-12.col-md-12.col-lg-8.col-xl-8
+      .row
+        .col-sm-12.col-md-6.col-lg-6.col-xl-6
+          = f.input :image
+        - if f.object.image.attached?
+          .col-sm-12.col-md-6.col-lg-6.col-xl-6
+            = image_tag(f.object.image, class: 'image')
+      = f.input :alt
+      = f.input :src
+      = f.input :completed_at
+      = f.submit action, class: 'btn btn-success btn-sm'
+    = render 'sidebar'
