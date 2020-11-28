@@ -18,8 +18,8 @@ module Users
 
     def create
       @article = Article.new(article_params)
-      add_categories_to_article
       if @article.save
+        add_categories_to_article
         redirect_to [:users, @article], notice: 'Article was successfully created.'
       else
         render :new
@@ -61,7 +61,7 @@ module Users
       return if params[:article][:category_ids].nil?
 
       params[:article][:category_ids].each do |category|
-        current_article.categorizations.build(category_id: category) unless category.empty?
+        @article.categorizations.build(category_id: category) unless category.empty?
       end
     end
   end
