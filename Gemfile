@@ -23,7 +23,7 @@ gem 'mini_magick'
 # for server
 gem 'dotenv-rails'
 gem 'mini_racer'
-gem 'puma', '~> 3.7'
+# gem 'puma', '~> 3.7'
 
 # for js
 gem 'coffee-rails', '~> 4.2'
@@ -62,6 +62,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
+  gem 'mina'
 end
 
 group :development do
@@ -83,6 +84,10 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
+end
+
+group :production do
+  gem 'unicorn'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
