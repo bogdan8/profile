@@ -17,10 +17,11 @@ module Users
     def edit; end
 
     def create
-      @article = Article.new(article_params)
-      if @article.save
-        add_categories_to_article
-        redirect_to [:users, @article], notice: 'Article was successfully created.'
+      @current_article = Article.new(article_params)
+      add_categories_to_article
+
+      if @current_article.save
+        redirect_to [:users, @current_article], notice: 'Article was successfully created.'
       else
         render :new
       end
@@ -29,6 +30,7 @@ module Users
     def update
       Categorization.where(article_id: current_article.id).delete_all
       add_categories_to_article
+
       if current_article.update(article_params)
         redirect_to [:users, current_article], notice: 'Article was successfully updated.'
       else
@@ -61,7 +63,7 @@ module Users
       return if params[:article][:category_ids].nil?
 
       params[:article][:category_ids].each do |category|
-        @article.categorizations.build(category_id: category) unless category.empty?
+        current_article.categorizations.build(category_id: category) unless category.empty?
       end
     end
   end
