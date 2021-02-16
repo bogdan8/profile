@@ -32,7 +32,7 @@
                           = work.title
   .row
     .col-sm-12.col-md-6.col-lg-6.col-xl-6
-      h4 Where i am:
+      h4 Where I am:
       .flex-row
         - @contact.networks.each do |network|
           = link_to fa_icon("#{network.icon} 2x"), network.link, target: :_blank, class: 'btn-margin'
@@ -53,9 +53,9 @@
 
   .row
     .col-sm-12.certificates
-      h4 Certificates and achievements that i have gotten:
+      h4 Certificates and achievements that I have gotten:
       - @certificates.each do |certificate|
-        .col-6.col-md-4.col-lg-3.col-xl-2.margin-bottom-certificate
+        .col-sm-6.col-md-4.col-lg-4.col-xl-4.margin-bottom-certificate
           = link_to image_tag(certificate.image, class: 'image', alt: "#{certificate.alt}"), certificate.src, target: :_blank
 
       hr
@@ -66,6 +66,6 @@
         h4 = category_book.title
         .row
           - category_book.books.each do |book|
-            .col-6.col-md-4.col-lg-3.col-xl-2.margin-bottom-book
+            .col-sm-6.col-md-4.col-lg-3.col-xl-2.margin-bottom-book
               = image_tag book.image, class: 'image', alt: book.alt
         hr
