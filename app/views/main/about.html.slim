@@ -54,9 +54,10 @@
   .row
     .col-sm-12.certificates
       h4 Certificates and achievements that I have gotten:
-      - @certificates.each do |certificate|
-        .col-sm-6.col-md-4.col-lg-4.col-xl-4.margin-bottom-certificate
-          = link_to image_tag(certificate.image, class: 'image', alt: "#{certificate.alt}"), certificate.src, target: :_blank
+      .row
+        - @certificates.each do |certificate|
+          .col-sm-6.col-md-4.col-lg-4.col-xl-4.margin-bottom-certificate
+            = link_to image_tag(certificate.image, class: 'image', alt: "#{certificate.alt}"), certificate.src, target: :_blank
 
       hr
   .row 
